@@ -1,0 +1,26 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/fluid/ViewHelpers" xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+<f:layout name="Content"/>
+
+<f:section name="Configuration">
+    <flux:form id="contentbox2" label="Content box w. rounded corners"  description="Adds a grey box with rounded corners" options="{group: 'Keolis'}">
+        <flux:grid>
+            <flux:grid.row>
+                <flux:grid.column name="content" style="width:100%" label="Content">
+                    <flux:form.content name="content" label="Content" />
+                </flux:grid.column>
+            </flux:grid.row>
+        </flux:grid>
+    </flux:form>    
+</f:section>
+
+<f:section name="Preview">
+    <flux:widget.grid />
+</f:section>
+
+<f:section name="Main">
+    <div class="content-box2">
+        <flux:flexform.renderContent area="content" />
+    </div>
+</f:section>
+</div>

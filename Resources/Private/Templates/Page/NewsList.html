@@ -1,0 +1,96 @@
+<f:layout name="Page"/>
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+    
+    
+    <f:section name="Configuration">
+        <flux:form id="newslist">
+            <flux:field.file label="Large image" name="settings.largeimage" showThumbnails="TRUE" inherit="0" />
+            <flux:field.file label="Small image" name="settings.smallimage" showThumbnails="TRUE" inherit="0" />
+            
+            <flux:grid>
+                <flux:grid.row>
+                    <flux:grid.column colPos="2" name="Intro" colspan="2"/>
+                    <flux:grid.column colPos="1" name="Sidebar" colspan="1" rowspan="2"/>                    
+                </flux:grid.row>
+                <flux:grid.row>
+                    <flux:grid.column colPos="0" name="Content" colspan="2"/>
+                </flux:grid.row>
+            </flux:grid>
+        </flux:form>
+    </f:section>
+    
+    <f:section name="BodyTagAttributes"> class="inner"</f:section>
+    
+    <f:section name="Content">
+        <div class="container full"> 
+            
+            <div class="row">
+
+                <div class="container row-table">
+
+                    <div class="col-sm-4 tabletFullWidth row-table-cell infoSmall">
+
+                        <f:render partial="Pageinfo" />                    
+
+                        <div class="innerIntro">
+                            <!--TYPO3SEARCH_begin-->
+                            <v:content.render column="2"/>
+                            <!--TYPO3SEARCH_end-->
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-3 row-table-cell visibleDesktop">
+
+                        <!-- large image -->
+                        <div>
+                            <f:if condition="{settings.largeimage}">
+                                <f:then>
+                                    <f:cObject typoscriptObjectPath="lib.responsiveImage" data="{file:'{settings.largeimage}',width:'416',height:'206c'}" currentValueKey="file" />
+                                </f:then>
+                                <f:else>
+                                    <f:image src="EXT:keolis/Resources/Public/images/innerImg4.jpg" class="img-responsive" alt="" />
+                                </f:else>
+                            </f:if>
+                        </div>
+
+
+                        <!-- small image -->
+                        <div class="innerSmallImg">
+                            <f:if condition="{settings.smallimage}">
+                                <f:then>
+                                    <f:cObject typoscriptObjectPath="lib.responsiveImage" data="{file:'{settings.smallimage}',width:'134c',height:'134c'}" currentValueKey="file" />
+                                </f:then>
+                                <f:else>
+                                    <f:image src="EXT:keolis/Resources/Public/images/innerImg5.jpg" class="img-responsive" alt="" />
+                                </f:else>
+                            </f:if>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="container">
+                    
+                    <div class="col-sm-5 tabletFullWidth">
+                        <!--TYPO3SEARCH_begin-->
+                        <v:content.render column="0"/>
+                        <!--TYPO3SEARCH_end-->
+                    </div>
+                    
+                    <div class="col-sm-2 visibleDesktop clearLR" style="margin-top:-170px;">
+                        <!--TYPO3SEARCH_begin-->
+                        <v:content.render column="1"/>
+                        <!--TYPO3SEARCH_end-->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </f:section>
+    
+</div>

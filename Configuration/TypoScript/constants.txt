@@ -1,0 +1,28 @@
+# customsubcategory=urls=URLs
+# customsubcategory=navigation=Navigation
+# customsubcategory=pages=Special pages
+# customsubcategory=seo=SEO
+# customsubcategory=news=News
+
+plugin.tx_keolis{
+    # cat = keolis/urls ; type=string; label=URL to LinkedIn
+    linkedin_url = https://www.linkedin.com/company/keolis
+    # cat = keolis/urls ; type=string; label=URL to twitter page
+    twitter_url = https://twitter.com/keolis
+    # cat = keolis/urls ; type=string; label=URL to Facebook page
+    facebook_url = https://facebook.com/keolis
+    # cat = keolis/navigation ; type=int+; label=Menu starting point:Starting point for main menu. Modify this to change the starting point of the menu for a specific branch of the site.
+    menu_starting_point =
+    # cat = keolis/navigation ; type=string; label=Shortcut menu:List of pages (ID's) to be displayed in the shortcut menu
+    shortcut_pages = 18,23,12,17,6,15
+    # cat = keolis/pages ; type=int+; label=Login page:Page ID of the login page
+    login_pid = 24
+    # cat = keolis/pages ; type=int+; label=Search page:Page ID of the search page
+    search_pid = 24
+    # cat = keolis/seo ; type=string; label=Google Analytics:Google Analytics ID
+    google_analytics_id = UA-281633-2
+    # cat = keolis/news ; type=int+; label=News detail pid:Page where news detail are displayed
+    news_detail_pid = 821
+    # cat = keolis/news ; type=int+; label=News storage pid:Page where news detail are displayed
+    news_storage_pid = 188
+}

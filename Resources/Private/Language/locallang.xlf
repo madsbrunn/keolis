@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages">
+        <body>
+            <trans-unit id="flux.default" xml:space="preserve">
+                <source>Default</source>
+            </trans-unit>
+            <trans-unit id="flux.newslist" xml:space="preserve">
+                <source>News list</source>
+            </trans-unit>
+            <trans-unit id="flux.article" xml:space="preserve">
+                <source>Article</source>
+            </trans-unit>
+            <trans-unit id="flux.front" xml:space="preserve">
+                <source>Frontpage</source>
+            </trans-unit>
+            <trans-unit id="flux.wide" xml:space="preserve">
+                <source>Wide page</source>
+            </trans-unit>
+            <trans-unit id="flux.career" xml:space="preserve">
+                <source>Career page</source>
+            </trans-unit>
+            <trans-unit id="flux.twocolumn.columns.left" xml:space="preserve">
+                <source>Left</source>
+            </trans-unit>
+            <trans-unit id="flux.twocolumn.columns.right" xml:space="preserve">
+                <source>Right</source>
+            </trans-unit>
+            <trans-unit id="flux.threecolumn.columns.left" xml:space="preserve">
+                <source>First</source>
+            </trans-unit>
+            <trans-unit id="flux.threecolumn.columns.middle" xml:space="preserve">
+                <source>Second</source>
+            </trans-unit>
+            <trans-unit id="flux.threecolumn.columns.right" xml:space="preserve">
+                <source>Third</source>
+            </trans-unit>
+            
+        </body>
+    </file>
+</xliff>

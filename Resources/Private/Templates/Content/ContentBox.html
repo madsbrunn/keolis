@@ -1,0 +1,36 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/fluid/ViewHelpers" xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+<f:layout name="Content"/>
+
+<f:section name="Configuration">
+    <flux:form id="contentbox" label="Content box, 2 columns"  description="Adds a grey box with two columns to the main content area" options="{group: 'Keolis'}">
+        <flux:grid>
+            <flux:grid.row>
+                <flux:grid.column name="left" style="width:40%" label="Left">
+                    <flux:form.content name="left" label="Left content" />
+                </flux:grid.column>
+                <flux:grid.column name="right"  style="width:60%" label="Right">
+                    <flux:form.content name="right" label="Right content" />
+                </flux:grid.column>
+            </flux:grid.row>
+        </flux:grid>
+    </flux:form>    
+</f:section>
+
+<f:section name="Preview">
+    <flux:widget.grid />
+</f:section>
+
+<f:section name="Main">
+    <div class="tabletFullWidth clearfix statBox">
+        <div class="halfWblock">
+            <div class="col-sm-3">
+                <flux:flexform.renderContent area="left" />
+            </div>
+            <div class="col-sm-4">
+                <flux:flexform.renderContent area="right" />
+            </div>
+        </div>
+    </div>
+</f:section>
+</div>

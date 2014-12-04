@@ -1,0 +1,267 @@
+<f:layout name="Page"/>
+
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+    
+    
+    <f:section name="Configuration">
+        <flux:form id="front">
+            <flux:form.sheet label="First page" name="page1">
+                <flux:field.file label="Large image (will be scaled and cropped to 698 x 512 pixels)" name="settings.largeimage" showThumbnails="TRUE" inherit="0" allowed="png,jpg,gif" />
+                <flux:field.text cols="15" rows="3" label="Text on top of image" name="settings.largeimagetext" default="" inherit="0" enableRichText="1" />
+                <flux:field.input label="Header in blue 'slide in' box" name="settings.blueboxheader" default="Header in box" inherit="0" />
+                <flux:form.section name="blueboxelements" label="Elements in blue 'slide in' box">
+                    <flux:form.object name="blueboxelement" label="Element">
+                        <flux:field.input label="Big text" name="bigtext" default="" />
+                        <flux:field.input label="Small text" name="smalltext" default="" />
+                    </flux:form.object>
+                </flux:form.section>
+                    
+                <!--<f:comment>
+                    <flux:form.section name="bottomelements" label="Teaser elements in the bottom">
+                    <flux:form.object name="type1" label="Header w. link and text">
+                        <flux:field.input label="Header" name="header" default="" />
+                        <flux:field.input size="10" label="Link" name="link" default="" >
+                            <flux:wizard.link label="Select link" />
+                        </flux:field.input>
+                        <flux:field.text label="Text" name="text" default="" rows="2" cols="15" />
+                        <flux:field.checkbox label="Display on mobile" name="mobile" />
+                    </flux:form.object>
+                    <flux:form.object name="type2" label="Image">
+                        <flux:field.file label="Image" name="image" showThumbnails="TRUE" />
+                        <flux:field.checkbox label="Display on mobile" name="mobile" />
+                    </flux:form.object>
+                    <flux:form.object name="type3" label="Image w/Text">
+                        <flux:field.file label="Image" name="image" showThumbnails="TRUE" allowed="png,jpg,gif" />
+                        <flux:field.text label="Text" name="text" default="" rows="2" cols="15" />
+                        <flux:field.input label="Background color" name="bgcolor" default="" size="7"/>
+                        <flux:field.checkbox label="Display on mobile" name="mobile" />
+                    </flux:form.object>
+                    <flux:form.object name="type4" label="Header">
+                        <flux:field.text label="Text" name="text" default="" rows="2" cols="15" />
+                        <flux:field.checkbox label="Display on mobile" name="mobile" />
+                    </flux:form.object>
+                    <flux:form.object name="type5" label="News">
+                        <flux:field.input label="Offset" name="offset" default="" size="7" eval="num"/>
+                        <flux:field.checkbox label="Display on mobile" name="mobile" />
+                    </flux:form.object>
+                </flux:form.section>
+                </f:comment>-->
+            </flux:form.sheet>
+            <flux:form.sheet label="Bottom elements" name="bottom">
+                <flux:field.text cols="15" rows="2" label="Text in first box" name="cornertext" default="" inherit="0" />
+                <flux:field.input label="News item 1 offset" name="news1offset" default="0" size="7" eval="num"/>
+                <flux:field.input label="News item 2 offset" name="news2offset" default="1" size="7" eval="num"/>
+            </flux:form.sheet>
+            <flux:form.sheet label="First sidebar" name="sidebar1">
+                <flux:field.text cols="15" rows="3" label="Text at top of the top of the sidebar" name="sidebar1.text1" default="" inherit="0" enableRichText="1" />
+                <flux:field.input size="10" label="Link below text" name="sidebar1.text1_link" default="" >
+                    <flux:wizard.link label="Select link" activeTab="page" blindLinkOptions="file,mail,folder" />
+                </flux:field.input>
+                <flux:field.text cols="15" rows="2" label="Text in first box" name="cornertext" default="" inherit="0" />
+                <flux:field.file label="Map image (will be scaled and cropped to 320 x 323 pixels)" name="settings.mapimage" showThumbnails="TRUE" inherit="0" allowed="png,jpg,gif" />
+                <flux:field.text cols="15" rows="3" label="Text below map" name="settings.aside1bottomtext" default="" inherit="0" enableRichText="1" />
+            </flux:form.sheet>
+            <flux:form.sheet label="Second page" name="page2">
+                <flux:field.file label="Large image (will be scaled and cropped to 514 x 805 pixels)" name="settings.largeimage_page2" showThumbnails="TRUE" allowed="png,jpg,gif" />
+                <flux:field.text cols="15" rows="3" label="Text on top of image" name="settings.largeimagetext_page2" default="" />
+                <flux:field.input size="10" label="Link on text box" name="settings.largeimagetext_page2_link" default="" >
+                    <flux:wizard.link label="Select link" activeTab="page" blindLinkOptions="file,mail,folder" />
+                </flux:field.input>
+            </flux:form.sheet>
+            <flux:form.sheet label="Second sidebar" name="sidebar2">
+                <flux:field.text cols="15" rows="3" label="Text at top of the top of the sidebar" name="sidebar2.text1" default="" inherit="0" enableRichText="1" />
+                <flux:field.input size="10" label="Link below text" name="sidebar2.text1_link" default="" >
+                    <flux:wizard.link label="Select link" activeTab="page" blindLinkOptions="file,mail,folder" />
+                </flux:field.input>
+                <flux:field.input label="Offset for the news item" name="sidebar2.newsoffset" default="" size="7" eval="num"/>
+            </flux:form.sheet>
+        </flux:form>
+    </f:section>
+    
+    <f:section name="BodyTagAttributes"> class="career homePg"</f:section>
+
+    <f:section name="Content">
+        <div id="outsideContainerLeft"></div>
+        <div id="outsideContainerRight"></div>
+        <div class="container fullminHeight">
+            <div class="leftArr offMobile">  <a href="javascript:void(0)" id="prevBt" class="btn btn-default arrowBtn rightBottomBtn ashCol" ><span class="glyphicon glyphicon-chevron-left"></span></a></div>
+            <div class="rightArr offMobile"><a href="javascript:void(0)" class="btn btn-default arrowBtn rightBottomBtn ashCol" id="nextBt"><span class="glyphicon glyphicon-chevron-right"></span></a></div>
+
+            <div class="arrowMobContainer">
+                <div class="leftArr"><a href="javascript:void(0)" id="prevMBt" class="btn btn-default arrowBtn rightBottomBtn ashCol" ><span class="glyphicon glyphicon-chevron-left"></span></a></div>
+                <div class="rightArr"><a href="javascript:void(0)" class="btn btn-default arrowBtn rightBottomBtn ashCol" id="nextMBt"><span class="glyphicon glyphicon-chevron-right"></span></a></div>
+            </div>
+            
+            <div class="col-sm-5 full" id="contentPart">
+                <!--banner area-->
+                <div class="topPart" id="keoSlideColumn1">
+                    
+                    <div class="bannerArea">
+                        
+                        <div class="slider carrerBanner clearfix">
+                            
+                            <!-- carousel -->
+                            <div id="carousel-career" class="carousel slide" data-ride="carousel">
+                                
+                                <div class="carousel-inner">
+                                    <!--slides -->
+                                    <div class="item item1 active clearfix"{f:if(condition:'{settings.largeimage}', then: ' style="background-image:url({f:uri.image(src:\'{settings.largeimage}\', height:\'512c\',width:\'698\')})"', else:'')}>
+                                         <f:if condition="{settings.largeimagetext}">
+                                            <div class="bannerBox homeDarkBox box circle04">
+                                                <f:format.raw>{settings.largeimagetext}</f:format.raw>
+                                            </div>
+                                        </f:if>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottomPart">
+                    <div class="newsArea clearfix">
+                        <div class="newsItem">
+                          <div class="careerBox orgBox mobilePadding">
+                            <!--<h2 class="boxPading">Ledige <span class="proximaLight">stillinger</span></h2>-->
+                            <h2 class="boxPading">
+                                <f:cObject typoscriptObjectPath="lib.splitText" data="{text:'{cornertext}',line1Wrap:'|<br />', line2Wrap:'<span class=\"proximaLight\">|</span><br />', line3Wrap:'|'}" currentValueKey="text" />
+                            </h2>
+                          </div>
+                        </div>
+                        <f:cObject typoscriptObjectPath="lib.newsItem" data="{offset:'{news1offset}', layout:'layout2'}" />
+                        <f:cObject typoscriptObjectPath="lib.newsItem" data="{offset:'{news2offset}', layout:'layout2'}" />
+                        <!--
+                        <f:comment>
+                        <f:for each="{bottomelements}" as="el" iteration="itemIteration" key="type" >
+                            <f:if condition="{el.type1}">
+                                <div class="newsItem{f:if(condition:'{el.type1.mobile}',then:'',else:' visibleDesktop')}{f:if(condition: itemIteration.isLast, then: ' last')}">
+                                    <div>
+                                        <h3><f:cObject typoscriptObjectPath="lib.linkText" data="{text:'{el.type1.header}',parameter:'{el.type1.link}'}" currentValueKey="text"  /></h3>
+                                        <p><f:format.nl2br>{el.type1.text}</f:format.nl2br></p>
+                                    </div>
+                                </div>
+                            </f:if>
+                            <f:if condition="{el.type2}">
+                                <div class="newsItem{f:if(condition:'{el.type2.mobile}',then:'',else:' visibleDesktop')}{f:if(condition: itemIteration.isLast, then: ' last')}">
+                                    <div class="newsImg" style="background-image:url({f:uri.image(src:'{el.type2.image}', height:'120c',width:'134')})">&nbsp;</div>
+                                </div>
+                            </f:if>
+                            <f:if condition="{el.type3}">
+                                <div class="newsItem{f:if(condition:'{el.type3.mobile}',then:'',else:' visibleDesktop')}{f:if(condition: itemIteration.isLast, then: ' last')}">
+                                    <div class="careerBox pinkBox mobilePadding">
+                                        <f:image src="{el.type3.image}" alt="" width="143" maxHeight="53"  />
+                                        <p><f:format.nl2br>{el.type3.text}</f:format.nl2br></p>
+                                    </div>
+                                </div>
+                            </f:if>
+                            <f:if condition="{el.type4}">
+                                <div class="newsItem{f:if(condition:'{el.type4.mobile}',then:'',else:' visibleDesktop')}{f:if(condition: itemIteration.isLast, then: ' last')}">
+                                    <div class="careerBox orgBox mobilePadding">
+                                        <h2 class="boxPading">
+                                            <f:cObject typoscriptObjectPath="lib.splitText" data="{text:'{el.type4.text}', line1Wrap:'|', line2Wrap:'<br /><span class=\"proximaLight\">|</span>', line3Wrap:'<br /><span class=\"proximaLight\">|</span>'}" currentValueKey="text" />
+                                        </h2>
+                                    </div>
+                                </div>
+                            </f:if>
+                            <f:if condition="{el.type5}">
+                                <div class="newsItem{f:if(condition:'{el.type5.mobile}',then:'',else:' visibleDesktop')}{f:if(condition: itemIteration.isLast, then: ' last')}">
+                                    <f:cObject typoscriptObjectPath="lib.newsItem" data="{offset:'{el.type5.offset}'}" />
+                                </div>
+                            </f:if>
+                        </f:for>
+                        </f:comment>
+                        -->
+                    </div>
+                </div>
+            </div>
+            
+            <div id="middleBluePart" class="fareBlueBox">
+                <div class="topPart">
+                    <div class="careerBoxBlue fullBox mobilePadding boxBluePading clearfix circleLeft01">
+                        <div class="closeBt"><a href="javascript:void(0)" class="btn btn-default arrowBtn" ><span class=" glyphicon glyphicon-remove"></span></a></div>
+                        <div class="blueRightArr"><f:image src="EXT:keolis/Resources/Public/images/blue_arrow.png" alt="" /></div>
+                        <p class="blueHead">{settings.blueboxheader}</p>
+                        <p class="whiteDottedLine"></p>
+                        <f:for each="{blueboxelements}" as="el">
+                            
+                            <div class="numVal clearfix">
+                                <div class="col-sm-2 blueBoxNumber text-left">{el.blueboxelement.bigtext}</div>
+                                <div class="col-sm-5 blueBoxText bluePdd1">{el.blueboxelement.smalltext}</div>
+                            </div>
+                            <p class="blueDottedLine"></p>
+                            
+                        </f:for>
+                    </div>
+                </div>
+            </div>
+            
+            <!--right content-->
+            <aside class="col-sm-2 full" id="sideCol2">
+                <div class="topPart">
+                    <div class="homeBox quarterBox mobilePadding boxPading clearfix colabSmallBox circle03">
+                        <f:format.raw>{sidebar1.text1}</f:format.raw>
+
+                        <a href="{f:uri.page(pageUid:'{sidebar2.text1_link}')}" class="btn btn-default arrowBtn rightBottomBtn"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </div>
+                    <div class="halfAndQuarterBox whiteBox mobilePadding boxPading">
+                        <h4 id="mapExplore" >EXPLOREZ NOS RÉSEAUX<br></h4>
+                        <span>À TRAVERS LE MONDE</span>
+                        <f:image src="{f:if(condition:'{settings.mapimage}', then:'{settings.mapimage}', else:'EXT:keolis/Resources/Public/images/map.png')}" alt="" id="mapClick" width="320" height="323c" />
+                    </div>		
+                </div>
+                <div class="bottomPart homeBox xtraPadd mobilePadding clearfix">
+                    <f:format.raw>{settings.aside1bottomtext}</f:format.raw>
+                </div>
+            </aside>
+
+            <div class="col-sep3 fullBox" id="sideCol3">
+                <div class="col-sm-3 full">
+                    <!--banner area-->
+                    <div class="fullHeight item5"{f:if(condition:'{settings.largeimage_page2}', then: ' style="background-image:url({f:uri.image(src:\'{settings.largeimage_page2}\', height:\'805c\',width:\'514\')})"', else:'')}>
+                        <div class="topPart lesCls">
+                            <div class="item  active clearfix fullBox">
+                                <f:if condition="{settings.largeimagetext_page2}">
+                                    <div class="whiteCareerBox whiteBannerBox relCls box">
+                                        <h2>
+                                            <f:cObject typoscriptObjectPath="lib.splitText" data="{text:'{settings.largeimagetext_page2}',line1Wrap:'<span class=\"proximaLight\">|</span><br>',line2Wrap:'|<br />',line3Wrap:'<span class=\"proximaLight\">|</span>'}" currentValueKey="text" />
+                                        </h2>
+                                        <a href="{f:uri.page(pageUid:'{settings.largeimagetext_page2_link}')}" class="btn btn-defaultRed arrowRedBtn whiteBoxArrow absCls"><span class="glyphicon glyphicon-chevron-right"></span></a> 
+                                    </div>
+                                </f:if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--right content-->
+            <aside class="col-sm-2 full sideCol4" id="sideCol4">
+                <div class="fullHeight">
+                    <div class="careerBox thirtyFiveBox mobilePadding boxPading clearfix colabBox circle01">
+                        <f:format.raw>{sidebar2.text1}</f:format.raw>
+                        <a href="{f:uri.page(pageUid:'{sidebar2.text1_link}')}" class="btn btn-default arrowBtn rightBottomBtn"><span class="glyphicon glyphicon-chevron-right"></span></a> 
+                    </div>
+
+                    <div id="secPage" class="quarterBox mobilePadding boxPading minHeightBox">
+                        <f:cObject typoscriptObjectPath="lib.newsItem" data="{offset:'{sidebar2.newsoffset}',layout:'layout1'}" />
+                    </div>
+                    <div id="secPageCon" class="thirtyFiveBox newsArea clearfix">
+                        
+                        
+                        
+                        <!--<div class="newsItems">
+                            <div class="newsImg full mobilePadding boxPading clearfix manBg relCls">
+                                <div class="manBlueBox">Jean-Pierre <br>Farandou<br><b>PRÉSDENT</b><br><f:image src="EXT:keolis/Resources/Public/images/sml_play.png" alt="" /></div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </aside>
+
+            <f:render partial="Searchbox" />
+            <f:render partial="Loginstatus" />        
+        </div>
+    </f:section>
+    
+</div>

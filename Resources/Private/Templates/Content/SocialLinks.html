@@ -1,0 +1,17 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/fluid/ViewHelpers" xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+<f:layout name="Content"/>
+
+<f:section name="Configuration">
+    <flux:form id="sociallinks" label="Social links" description="Adds a widget with social links to the sidebar" options="{group: 'Keolis'}">
+    </flux:form>    
+</f:section>
+
+<f:section name="Preview">
+    <strong>Social links</strong>
+</f:section>
+
+<f:section name="Main">
+    <f:render partial="Aside/SocialLinks" />    
+</f:section>
+</div>

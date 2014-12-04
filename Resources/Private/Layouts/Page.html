@@ -1,0 +1,54 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<f:layout name="Default"/>
+<v:page.header.meta name="viewport" content="width=device-width, initial-scale=1.0" ></v:page.header.meta>
+
+<body{f:render(section:'BodyTagAttributes',optional:1)}>
+<!--[if lt IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<div class="navbar navbar-default navbar-fixed-top header" role="navigation"><!--header area-->
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="/"><f:image src="EXT:keolis/Resources/Public/images/logo.png" class="img-responsive" alt="Keolis" /></a> </div>
+    <div class="navbar-collapse collapse">
+      <f:cObject typoscriptObjectPath="lib.menu" />
+    </div>
+    <f:cObject typoscriptObjectPath="lib.logoutbtn" data="{settings.login_pid}" />
+    <!--<div class="searchBtn logInBtn hidden-xs"><a href="javascript:void(0)"></a></div>-->
+    <div id="searchBtn" class="searchBtn hidden-xs"><a href="javascript:void(0)"></a></div>
+  </div>
+</div>
+
+<section class="content">
+    <f:render section="Content"/>
+</section>
+
+<footer class="hidden-xs">
+    <f:cObject typoscriptObjectPath="lib.sitemap"  />
+    <div class="container visibleCnt">
+        <div class="col-md-2 col-sm-1">
+            <div class="footerLogo">
+                <p>&nbsp;</p>
+                <a href="http://www.keolis.com"><img src="/typo3conf/ext/keolis/Resources/Public/images/footerLogo.png" alt="Keolis.com" /></a>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-4">
+            <f:cObject typoscriptObjectPath="lib.shortcuts" data="{settings.shortcut_pages}" />
+        </div>
+        <div class="col-md-2 col-sm-2">
+            <div class="pull-left socialIcons">
+                <!--<ul>
+                    <li><f:link.external uri="{settings.twitter_url}" class="twitter" target="_blank"><span class="hidden">Twitter</span></f:link.external></li>
+                    <li><f:link.external uri="{settings.facebook_url}" class="facebook" target="_blank"><span class="hidden">Facebook</span></f:link.external></li>
+                    <li><f:link.external uri="{settings.linkedin_url}" class="linkedIn" target="_blank"><span class="hidden">LinkedIn</span></f:link.external></li>
+                </ul>-->
+            </div>
+            <a href="#" class="footerplan pull-right">Sitemap</a> 
+        </div>
+    </div>
+</footer>
+<v:asset.script name="inlinejs" dependencies="custom" standalone="TRUE">
+$(function () {default_docready();homepage_docready();});
+</v:asset.script>
+<f:render partial="GoogleAnalytics" />

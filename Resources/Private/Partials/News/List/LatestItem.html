@@ -1,0 +1,6 @@
+{namespace n=Tx_News_ViewHelpers}
+{namespace v=Tx_Vhs_ViewHelpers}
+<div class="latestNewsItem">
+    <p class="date"><v:format.case case="upper"><n:format.date format="%d. %b KL. %H.%M">{newsItem.datetime}</n:format.date></v:format.case></p>
+  <p><n:link newsItem="{newsItem}" settings="{settings}">{newsItem.title}</n:link></p>
+</div>

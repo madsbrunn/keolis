@@ -1,0 +1,31 @@
+<f:layout name="Page"/>
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+    
+    
+    <f:section name="Configuration">
+        <flux:form id="default">
+            <!-- Backend layout grid (TYPO3 6.x and greater only) -->
+            <flux:grid>
+                <flux:grid.row>
+                    <flux:grid.column colPos="0" name="Content" colspan="1"/>
+                </flux:grid.row>
+            </flux:grid>
+        </flux:form>
+    </f:section>
+    
+    <f:section name="BodyTagAttributes"></f:section>
+    
+    <f:section name="Content">
+        <div class="container fullminHeight"> 
+            <!--TYPO3SEARCH_begin-->
+            <v:content.render column="0"/>
+            <!--TYPO3SEARCH_end-->
+            <f:render partial="Searchbox" />
+            <f:render partial="Loginstatus" />        
+        </div>
+    </f:section>
+    
+</div>

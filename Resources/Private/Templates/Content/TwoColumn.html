@@ -1,0 +1,59 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/fluid/ViewHelpers" xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+<f:layout name="Content"/>
+
+<f:section name="Configuration">
+    <flux:form id="twocolumn" label="2 Columns" description="Displays content in two columns" options="{group: 'Keolis'}">
+        <flux:field.select label="How should the columns be distributed" items="{1_6:'15%-85%',2_5:'28%-72%',3_4:'43%-%57',4_3:'57%-43%',5_2:'72%-28%',6_1:'85%-15%'}" name="distribution" />
+        <flux:field.checkbox name="hide_left_mobile" label="Hide left column on small screens" />
+        <flux:field.checkbox name="hide_right_mobile" label="Hide right column on small screens" />
+        <flux:field.input name="left_padding" label="Left column distance to border (CSS padding)" size="10" />
+        <flux:field.input name="right_padding" label="Right column distance to border (CSS padding)" size="10" />
+        <flux:grid>
+            <flux:grid.row>
+                <flux:grid.column name="left" style="width:{f:render(partial:'ColumnWidth',arguments:{cols:'{v:format.substring(content:\'{distribution}\', start:\'0\', length:\'1\')}'})}%">
+                    <flux:form.content name="left" label="Left content" />
+                </flux:grid.column>
+                <flux:grid.column name="right"  style="width:{f:render(partial:'ColumnWidth',arguments:{cols:'{v:format.substring(content:\'{distribution}\', start:\'2\', length:\'1\')}'})}%">
+                    <flux:form.content name="right" label="Right content" />
+                </flux:grid.column>
+            </flux:grid.row>
+        </flux:grid>
+    </flux:form>
+</f:section>
+
+<f:section name="Preview">
+    <strong>2 Columns</strong>
+    <flux:widget.grid />
+</f:section>
+
+<f:section name="Main">
+    <div class="container borderGrayBottom">
+        <div class="col-sm-{v:format.substring(content:'{distribution}', start:'0', length:'1')}{f:if(condition:'{hide_left_mobile}', then:' hidden-xs')}">
+            <f:if condition="{left_padding}">
+                <f:then>
+                    <div style="padding:{left_padding}">
+                        <flux:flexform.renderContent area="left" />
+                    </div>
+                </f:then>
+                <f:else>
+                    <flux:flexform.renderContent area="left" />
+                </f:else>
+            </f:if>
+        </div>
+        <div class="col-sm-{v:format.substring(content:'{distribution}', start:'2', length:'1')}{f:if(condition:'{hide_right_mobile}', then:' hidden-xs')}">
+            <f:if condition="{right_padding}">
+                <f:then>
+                    <div style="padding:{right_padding}">
+                        <flux:flexform.renderContent area="right" />
+                    </div>
+                </f:then>
+                <f:else>
+                    <flux:flexform.renderContent area="right" />
+                </f:else>
+            </f:if>
+        </div>
+    </div>    
+</f:section>
+
+</div>

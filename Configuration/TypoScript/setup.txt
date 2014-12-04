@@ -1,0 +1,11 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:./config.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:./plugin.tx_vhs.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:./plugin.tx_keolis.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:./plugin.tx_news.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:./tt_content.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:./lib.ts">
+
+
+
+
+

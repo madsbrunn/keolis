@@ -1,0 +1,17 @@
+<div class="mediaelement mediaelement-image">
+	<f:if condition="{settings.detail.media.image.lightbox}">
+		<f:then>
+			<a rel="{settings.detail.media.image.lightbox}" title="{mediaElement.caption}" href="{f:uri.image(src:'{mediaElement.uid}' treatIdAsReference:1 maxWidth:'800')}">
+                            <f:cObject typoscriptObjectPath="lib.responsiveImage" data="{file:'{mediaElement.uid}',width:'850',height:'500c-100'}" currentValueKey="file" />
+			</a>
+		</f:then>
+		<f:else>
+                    <f:cObject typoscriptObjectPath="lib.responsiveImage" data="{file:'{mediaElement.uid}',width:'850',height:'500c-100'}" currentValueKey="file" />
+		</f:else>
+	</f:if>
+</div>
+<f:if condition="{mediaElement.originalResource.description}">
+	<p class="news-img-caption">
+		{mediaElement.originalResource.description}
+	</p>
+</f:if>

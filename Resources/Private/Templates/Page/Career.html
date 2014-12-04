@@ -1,0 +1,119 @@
+<f:layout name="Page"/>
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+    
+    
+    <f:section name="Configuration">
+        <flux:form id="career">
+            <flux:form.sheet label="Image carrousel" name="carrousel">
+                <flux:form.section name="images" label="Images">
+                    <flux:form.object name="image" label="Image">
+                        <flux:field.file label="Image file (will be scaled and cropped to 698 x 512 pixels)" name="file" showThumbnails="TRUE" inherit="0" allowed="png,jpg,gif" />
+                        <flux:field.text label="Text" name="text" cols="15" rows="2" default="" inherit="0" />
+                        <flux:field.input label="Link" name="link" size="10" default="" >
+                            <flux:wizard.link label="Select link" activeTab="page" blindLinkOptions="file,mail,folder" />
+                        </flux:field.input>
+                    </flux:form.object>
+                </flux:form.section>
+            </flux:form.sheet>
+            
+            <flux:form.sheet label="Bottom elements" name="bottom">
+                <flux:field.text cols="15" rows="2" label="Text in first box" name="cornertext" default="" inherit="0" />
+                <flux:field.input label="News item 1 offset" name="news1offset" default="0" size="7" eval="num"/>
+                <flux:field.input label="News item 2 offset" name="news2offset" default="1" size="7" eval="num"/>
+            </flux:form.sheet>
+            
+            <flux:form.sheet label="Sidebar" name="sidebar">
+                <flux:field.text cols="15" rows="3" label="First text box" name="sidebar.text1" default="" inherit="0" enableRichText="1" />
+                <flux:field.input size="10" label="Link below text box" name="sidebar.text1_link" default="" >
+                    <flux:wizard.link label="Select link" activeTab="page" blindLinkOptions="file,mail,folder" />
+                </flux:field.input>
+
+                <flux:field.text cols="15" rows="3" label="Second text box" name="sidebar.text2" default="" inherit="0" enableRichText="1" />
+                <flux:field.input size="10" label="Link text" name="sidebar.text2_linktext" default="" />
+                <flux:field.input size="10" label="Link" name="sidebar.text2_link" default="" >
+                    <flux:wizard.link label="Select link" activeTab="page" blindLinkOptions="file,mail,folder" />
+                </flux:field.input>
+                
+                <flux:field.text cols="15" rows="3" label="Third text box" name="sidebar.text3" default="" inherit="0" enableRichText="1" />
+                <flux:field.input size="10" label="Link text" name="sidebar.text3_linktext" default="" />
+                <flux:field.input size="10" label="Link" name="sidebar.text3_link" default="" >
+                    <flux:wizard.link label="Select link" activeTab="page" blindLinkOptions="file,mail,folder" />
+                </flux:field.input>
+            </flux:form.sheet>
+
+        </flux:form>
+    </f:section>
+    
+    <f:section name="BodyTagAttributes"> class="career"</f:section>
+
+    <f:section name="Content">
+        <div class="container fullminHeight"> 
+            <!--main content area-->
+            <div class="col-sm-5 full"> 
+                <!--banner area-->
+                <div class="topPart">
+                    <div class="bannerArea">
+                        <div class="slider carrerBanner clearfix"> 
+                            <!-- carousel -->
+                            <div id="carousel-career" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <f:for each="{images}" as="el" iteration="imageIterator">
+                                        <li data-target="#carousel-career" data-slide-to="{imageIterator.index}"{f:if(condition:'{imageIterator.isFirst}',then:' class="active"')}></li>
+                                    </f:for>
+                                </ol>
+                                <div class="carousel-inner"> 
+                                    <f:for each="{images}" as="el" iteration="imageIterator">
+                                        <div class="item {f:if(condition:'{imageIterator.isFirst}',then:'active ')}clearfix" style="background-image:url({f:uri.image(src:'{el.image.file}',height:'660c',width:'900')});">
+                                            <div class="bannerBox careerBox box">
+                                                <h2>
+                                                    <f:cObject typoscriptObjectPath="lib.splitText" data="{text:'{el.image.text}', line1Wrap:'|', line2Wrap:'<br /><span class=\"proximaLight\">|</span>', line3Wrap:'<br /><span class=\"proximaLight\">|</span>'}" currentValueKey="text" />
+                                                </h2>
+                                                <a href="{f:uri.page(pageUid:'{el.image.link}')}" class="btn btn-default arrowBtn"><span class="glyphicon glyphicon-chevron-right"></span></a> 
+                                            </div>
+                                        </div>
+                                    </f:for>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottomPart">
+                    <div class="newsArea clearfix">
+                        <div class="newsItem">
+                            <div class="careerBox mobilePadding">
+                                <h2 class="boxPading">
+                                    <f:cObject typoscriptObjectPath="lib.splitText" data="{text:'{cornertext}',line1Wrap:'|<br />', line2Wrap:'<span class=\"proximaLight\">|</span><br />', line3Wrap:'|'}" currentValueKey="text" />
+                                </h2>
+                            </div>
+                        </div>
+                        <f:cObject typoscriptObjectPath="lib.newsItem" data="{offset:'{news1offset}', layout:'layout2'}" />
+                        <f:cObject typoscriptObjectPath="lib.newsItem" data="{offset:'{news2offset}', layout:'layout2'}" />
+                    </div>
+                </div>
+            </div>
+            <!--right content-->
+            <aside class="col-sm-2 full">
+                <div class="topPart">
+                    <div class="careerBox halfBox mobilePadding boxPading clearfix colabBox circle01">
+                        <f:format.raw>{sidebar.text1}</f:format.raw>
+                        <a href="{f:uri.page(pageUid:'{sidebar.text1_link}')}" class="btn btn-default arrowBtn rightBottomBtn"><span class="glyphicon glyphicon-chevron-right"></span></a> 
+                    </div>
+                    <div class="halfBox whiteBox mobilePadding boxPading">
+                        <f:format.raw>{sidebar.text2}</f:format.raw>
+                        <a href="{f:uri.page(pageUid:'{sidebar.text2_link}')}" class="btn btn-default lightArrowBtn"><span class="glyphicon glyphicon-chevron-right"></span> {sidebar.text2_linktext}</a> 
+                    </div>
+                </div>
+                <div class="bottomPart careerBox mobilePadding clearfix">
+                    <div class="boxPading">
+                        <f:format.raw>{sidebar.text3}</f:format.raw>
+                    </div>
+                    <a href="{f:uri.page(pageUid:'{sidebar.text3_link}')}" class="btn btn-default arrowBtn rightBottomBtn">{sidebar.text3_linktext}<span class="glyphicon glyphicon-chevron-right"></span></a> 
+                </div>
+            </aside>
+        </div>
+    </f:section>
+    
+</div>

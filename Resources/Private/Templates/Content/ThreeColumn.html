@@ -1,0 +1,77 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/fluid/ViewHelpers" xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+<f:layout name="Content"/>
+
+<f:section name="Configuration">
+    <flux:form id="threecolumn" label="3 Columns" description="Displays content in three columns" options="{group: 'Keolis'}">
+        <flux:field.select label="How should the columns be distributed" items="{2_2_3:'29%-29%-42%',2_3_2:'29%-42%-29%',3_2_2:'42%-29%-29%'}" name="distribution" />
+        <flux:field.checkbox name="hide_left_mobile" label="Hide first column on small screens" />
+        <flux:field.checkbox name="hide_middle_mobile" label="Hide second column on small screens" />
+        <flux:field.checkbox name="hide_right_mobile" label="Hide third column on small screens" />
+        <flux:field.input name="left_padding" label="First column distance to border (CSS padding)" size="10" />
+        <flux:field.input name="middle_padding" label="Second column distance to border (CSS padding)" size="10" />
+        <flux:field.input name="right_padding" label="Third column distance to border (CSS padding)" size="10" />
+        <flux:grid>
+            <flux:grid.row>
+                <flux:grid.column name="left" style="width:{f:render(partial:'ColumnWidth',arguments:{cols:'{v:format.substring(content:\'{distribution}\', start:\'0\', length:\'1\')}'})}%">
+                    <flux:form.content name="left" label="First column" />
+                </flux:grid.column>
+                <flux:grid.column name="middle"  style="width:{f:render(partial:'ColumnWidth',arguments:{cols:'{v:format.substring(content:\'{distribution}\', start:\'2\', length:\'1\')}'})}%">
+                    <flux:form.content name="right" label="Second column" />
+                </flux:grid.column>
+                <flux:grid.column name="right"  style="width:{f:render(partial:'ColumnWidth',arguments:{cols:'{v:format.substring(content:\'{distribution}\', start:\'4\', length:\'1\')}'})}%">
+                    <flux:form.content name="right" label="Third column" />
+                </flux:grid.column>
+            </flux:grid.row>
+        </flux:grid>
+    </flux:form>
+</f:section>
+
+<f:section name="Preview">
+    <strong>3 Columns</strong>
+    <flux:widget.grid />
+</f:section>
+
+<f:section name="Main">
+    <div class="container borderGrayBottom row-table">
+        <div class="col-sm-{v:format.substring(content:'{distribution}', start:'0', length:'1')}{f:if(condition:'{hide_left_mobile}', then:' hidden-xs')} row-table-cell">
+            <f:if condition="{left_padding}">
+                <f:then>
+                    <div style="padding:{left_padding}">
+                        <flux:flexform.renderContent area="left" />
+                    </div>
+                </f:then>
+                <f:else>
+                    <flux:flexform.renderContent area="left" />
+                </f:else>
+            </f:if>
+        </div>
+        <div class="col-sm-{v:format.substring(content:'{distribution}', start:'2', length:'1')}{f:if(condition:'{hide_middle_mobile}', then:' hidden-xs')} borderGrayLeft row-table-cell">
+            <f:if condition="{middle_padding}">
+                <f:then>
+                    <div style="padding:{middle_padding}">
+                        <flux:flexform.renderContent area="middle" />
+                    </div>
+                </f:then>
+                <f:else>
+                    <flux:flexform.renderContent area="middle" />
+                </f:else>
+            </f:if>
+        </div>
+        <div class="col-sm-{v:format.substring(content:'{distribution}', start:'4', length:'1')}{f:if(condition:'{hide_right_mobile}', then:' hidden-xs')} borderGrayLeft row-table-cell">
+            <f:if condition="{right_padding}">
+                <f:then>
+                    <div style="padding:{right_padding}">
+                        <flux:flexform.renderContent area="right" />
+                    </div>
+                </f:then>
+                <f:else>
+                    <flux:flexform.renderContent area="right" />
+                </f:else>
+            </f:if>
+        </div>
+    </div>    
+
+</f:section>
+
+</div>

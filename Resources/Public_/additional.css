@@ -1,0 +1,16 @@
+.page-navigation{
+    margin: 10px 0 10px 0;
+}
+
+.page-navigation ul.f3-widget-paginator li{
+    float: left;
+}
+
+.content-box2{
+    border-radius: 10px;
+    box-shadow: 0 10px 10px -10px #888888;    
+    background-color: #f0f0f0;
+    margin-top: 20px;
+    padding: 15px;
+    width: 100%;    
+}

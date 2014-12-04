@@ -1,0 +1,20 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/fluid/ViewHelpers" xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+<f:layout name="Content"/>
+
+<f:section name="Configuration">
+    <flux:form id="banner" label="Banner" description="Adds a banner to the side bar" options="{group: 'Keolis'}">
+        <flux:field.text cols="30" rows="10" label="Banner text(HTML)" name="settings.text" default="<p><span>97%</span><br>des voyageurs satisfaits <br>et très satisfaits du réseau*</p>" />
+    </flux:form>    
+</f:section>
+
+<f:section name="Preview">
+    <strong>Banner</strong>
+</f:section>
+
+<f:section name="Main">
+    <div class="addBox">
+        <f:cObject typoscriptObjectPath="lib.parsedText" data="{settings.text}" />
+    </div>
+</f:section>
+</div>
