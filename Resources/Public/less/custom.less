@@ -15,7 +15,7 @@ a{
 input:focus {
   outline: none;
 }
-.visibleDesktop{
+.visibleDesktop, .hidden-xs{
   display: none;
 }
 .loginNavs{
@@ -39,28 +39,7 @@ input:focus {
     color:#fff !important;
   }
 }
-/*pages colors -----------------------------------------------------*/
-.career .navbar .navbar-nav > .active > a {
-  background-color: @careerColor;
-}
-.careerBox{
-  background-color: @careerColor;
-  color:#fff;
-}
-.bottomPart.careerBox,
-.bottomPart .careerBox{
-  h2{
-    font-size: 18px;
-  }
-}
-//100% height
-html, body {
-  height: 100%;
-}
-body {
-  min-height: 100%;
-}
-
+.proximaLight{font-family: @proxima-light;}
 //form example
 .formExample{
  padding: 20px;
@@ -87,7 +66,15 @@ footer{
   width: 100%;
   color:#fff;
   background: @brand-footer;
-  z-index:10000;
+  z-index:10000 !important;
+  .visibleCntWrapp{
+    background: @brand-footer;
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    left:0;   
+  }
   a{
     color:#fff;
     text-decoration: none;
@@ -101,7 +88,7 @@ footer{
   }
 }
 .navbar-nav {
-  li{
+  li{   
     a{
       line-height: 40px;
       padding: 0 7px;
@@ -156,12 +143,26 @@ section.content {
     .circleBg;
     background-image:url(../images/whiteCircle.png) ; 
   }
+  .whitecircleBg2() {
+    .circleBg;
+    background-image:url(../images/whiteCircle2.png) ; 
+  }
   .blackcircleBg(){
     .circleBg;
     background-image:url(../images/blackCircle.png) ;
   }
   
 //career page --------------------------------------------
+.careerBox{
+  background-color: @careerColor;
+  color:#fff;
+}
+.bottomPart.careerBox,
+.bottomPart .careerBox{
+  h2{
+    font-size: 18px;
+  }
+}
 .career {
   .arrowBtn{
     color: @careerColor;
@@ -476,15 +477,13 @@ p.date{
     }
   }
 }
-
-
-
 //media queries --------------------------------------------------------------------------------
 /*only mobile -----------------------------------------------------------*/
 @media (max-width: @screen-xs-max){
   body{
     background: #fff;
   }
+  .alertsCntr{padding-top: 50px;}
   .row{
     margin:0;
   }
@@ -531,7 +530,7 @@ p.date{
     display: block !important;
   }
   .career section.content {
-    padding-top: 50px;
+    //padding-top: 50px;
   }
   .bannerArea{
     border-bottom: 4px solid #fff;
@@ -582,11 +581,13 @@ p.date{
       padding-left: 15px;
     }
   }
+  .infoSmall{padding-top: 8px;}
 }
 /*only tablet - width 768------------------------------------------------*/
 @media (width: @screen-sm-min){
   .hiddenTablet{display: none}
   .tabletFullWidth{width:100% !important; float: none; border:none;}
+  .navbar{z-index: 100000 !important;}
   .navbar-collapse{
     padding-bottom: 2px;
   }
@@ -615,6 +616,10 @@ p.date{
     float: right;
     height:100%;
   }
+  .inner section.content .col-sm-5, .inner section.content .col-sm-2{
+    width: 100%;
+  }
+  .inner .halfWblock .col-sm-3,.inner .halfWblock .col-sm-4{width: 100%;} 
   .carrerBanner{
       background-position: center top !important;
   }
@@ -732,10 +737,10 @@ p.date{
     //footer
     footer {
       border-top: 7px solid #fff;
-      position: fixed;
-      bottom: 0px;
+      //position: fixed;
+      //bottom: 0px;
       width:100%;
-      .visibleCnt{height: 60px ;}
+      .visibleCnt{height: 60px;}
       .navUnit{
         width: 33%;
         padding-top:10px;
@@ -785,7 +790,8 @@ p.date{
         }       
       }
       .siteMap{
-        background: @brand-footer;
+        background: @brand-sitemap;
+        border-top: 7px solid #fff;
         position: absolute;
         bottom: 0;
         left:0;   
@@ -795,6 +801,7 @@ p.date{
         padding-top: 15px;
         font-size: 12px;
         display:none;
+        .container{ background: @brand-sitemap;}
         .mapUnit{
           width: 20%;
           h3{
@@ -823,21 +830,10 @@ p.date{
     }
     //main content area 
     section.content {
-        position: absolute;
-        top: 69px;
-        bottom: 67px;
-        left: 0px;
-        right: 0px;
-        //height:auto;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        background: transparent;
-        padding: 0;
         .container{
           background: #fff;
           display: block;
           position: relative;
-          //background-color: #ccc;
           .headerDropp{
             background:@brand-footer url(../images/lupaVelika.png) no-repeat left top;
             height: 72px;
@@ -869,9 +865,11 @@ p.date{
           }
           .searchDropp{
             background:@brand-footer url(../images/lupaVelika.png) no-repeat left top;
+            z-index: 10001;
           } 
           .loginDropp{
             background:@brand-footer url(../images/keyBox.png) no-repeat left center;
+            z-index: 10001;
           }        
         }
         .fullminHeight{
@@ -980,7 +978,7 @@ p.date{
 }
 /*desktop only-----------------------------------------------------------*/
 @media (min-width: 769px){
-  .visibleDesktop{
+  .visibleDesktop, .hidden-xs{
     display: block;
   }
   html{
@@ -997,7 +995,7 @@ p.date{
   }
   section.content ,footer, .navbar-default .container {
     min-width: 980px; 
-    margin: 0 auto;
+    //margin: 0 auto;
   }
   .navbar-default{
     min-width: 980px;
@@ -1072,36 +1070,12 @@ p.date{
     display: block;
   }
   .dropdown-menu {
-    top: 40px;
-    > li{
-      background: @dropdown-bg;
-      border: 1px solid #eee;
-      border-top:0;
-        &:hover {
-          border-color: @brand-primary;
-        }
-        &.first {
-          margin-top: 9px;
-        }
-    }
-    > li > a {
-      padding-left: 27px !important;
-    }
-  }
-  //first subnav left position
-  .navOneMenu{
-    left: -20%;
-  }
-  //navigation:hover
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
-  .dropdown-menu {
     top: 39px;
+    border:0;
     > li{
       background: @dropdown-bg;
-      border: 1px solid #eee;
-      border-top:0;
+      border: 1px solid #eee !important;
+      border-top:0 !important;
         &:hover {
           border-color: @brand-primary;
         }
@@ -1115,11 +1089,17 @@ p.date{
     min-height: 100%  !important;
     background-color: #fff;
   }
-  //first subnav left position
+  //subnavs left position
   .navOneMenu{
     left: -32px;
     > li > a {
       padding-left: 37px !important;
+    }
+  }
+  .navTwoMenu{
+    left: -22px;
+    > li > a {
+      padding-left: 27px !important;
     }
   }
   
@@ -1129,6 +1109,17 @@ p.date{
     padding: 23px;
   }
   .infoSmall{
+    background: @brand-innerDark;
+    border-right: 4px solid #fff;
+    border-left: 4px solid #fff;
+    .innerIntro{
+      h1{
+        color:#fff !important;
+      }
+      p{
+        color:#fff !important;
+      }
+    } 
     .pageInfo{
       margin: 0 0px 0px 0px;
     }
@@ -1208,19 +1199,6 @@ p.date{
       }
     }
     
-  }
-  .infoSmall{
-    background: @brand-innerDark;
-    border-right: 4px solid #fff;
-    border-left: 4px solid #fff;
-    .innerIntro{
-      h1{
-        color:#fff !important;
-      }
-      p{
-        color:#fff !important;
-      }
-    } 
   }
   .articleInfo{
       border:0;
@@ -1344,9 +1322,9 @@ p.date{
   }
 }
 /*home slider ----------------------------------------------------------------------------*/
-/* General */
-.leftArr{position: absolute; right: 50px; top: 29%; border: 0px solid red; z-index: 9999999;}
-.rightArr{position: absolute; right: 0px; top: 29%; border: 0px solid red; z-index: 9999999;}
+/* General*/
+.leftArr{position: absolute; right: 50px; top: 48%; border: 0px solid red; z-index: 99999;}
+.rightArr{position: absolute; right: 0px; top: 48%; border: 0px solid red; z-index: 99999;}
 .homeBox {background-color: #1caec5; color: #fff;}
 .homeBox.xtraPadd{padding: 20px;}
 .quarterBox {height: 22.952095808383234%; overflow: hidden;}
@@ -1397,8 +1375,8 @@ section.content .boxBluePading {padding: 10%;}
 .whiteBox img{padding: 8px 0 0 0;}
 #secPage .newsArea, #secPageCon.newsArea {height: 100%;}
 .item1 .box {width: 36%; min-width: 268px;}
-#outsideContainerLeft{background: rgba(255, 255, 255, 0.8); z-index: 10000; height: 100%; position: absolute;}
-#outsideContainerRight{background: rgba(255, 255, 255, 0.8); z-index: 10000; height: 100%; right: 0px; position: absolute;}
+#outsideContainerLeft{background: rgba(255, 255, 255, 0.8); z-index: 100; height: 100%; position: absolute;}
+#outsideContainerRight{background: rgba(255, 255, 255, 0.8); z-index: 100; height: 100%; right: 0px; position: absolute;}
 .decWid{padding: 0px;}
 #mapClick{cursor: pointer;}
 /*home slider queries --------------------------------------------------------------------*/
@@ -1440,13 +1418,12 @@ section.content .boxBluePading {padding: 10%;}
   .homePg .sideCol4{position: absolute; left: 142.428%;}
   section.content #secPage.boxPading, section.content #secPageCon .boxPading {padding: 4% 0 4% 4%;}
   .homePg .col-sep3{position: absolute; width: 100%; right: -100%;}
-  .homePg .sideCol4{position: absolute; left: 142.428%; display: block;}
+  .homePg .sideCol4{position: absolute; left: 142.428%; display: block;top: 0;}
   .arrowMobContainer{display: none;}
   .closeBt{display: none;}
 }
 @media (max-width: 767px) {
-  .leftArr{display: none;}
-  .rightArr{display: none;}
+  .leftArr, #prevBt, .rightArr, #nextBt{display: none !important;}
   #secPageCon.newsArea{height: 50%;}
   #secPageCon.newsArea .newsItems {width: 100%; height: 100%; float: left;}
   #secPageCon.newsArea .newsItems .newsImg {width: 100%; height: 100%; float: left;}
@@ -1462,8 +1439,8 @@ section.content .boxBluePading {padding: 10%;}
 }
 @media (min-width:769px) and (max-width: 1214px) {
   .halfAndQuarterBox img{width: 100%;}
-  .leftArr{right: 50px; top: 31%;}
-  .rightArr{right: 0px; top: 31%;}
+  //.leftArr{right: 50px; top: 31%;}
+  //.rightArr{right: 0px; top: 31%;}
   .arrowMobContainer{display: none;}
   .whiteBox img{padding: 33px 0 0 0;}
 }
@@ -1502,14 +1479,6 @@ section.content .boxBluePading {padding: 10%;}
   .homePg .homeDarkBox h1{font-size: 20px; margin: 2% 0% 0% 0%;}
   .homePg .homeDarkBox span{font-size: 20px;}
 }
-@media (min-width:1125px) and (max-width: 1214px) {
-  .rightArr{top: 48%; right: -54px;}
-  .leftArr{top: 48%; right: 0px;}
-}
-@media (min-width:1325px){
-  .rightArr{top: 48%; right: -54px;}
-  .leftArr{top: 48%; right: 0px;}
-}
 @media (min-width: 769px) {
   .colabSmallBox {min-height: 120px;}
   #sideCol2 .colabBox, #sideCol2 .whiteBox {min-height: 350px;}
@@ -1531,4 +1500,469 @@ section.content #secPageCon .boxPading {padding: 4%;}
 #secPage.quarterBox{height: 20%;}
 #secPageCon.thirtyFiveBox, .thirtyFiveBox {min-height: 40%; height: 40%;}
 .newsArea .newsItem div.mallImg{min-height: 20%;}
-/*end home slider ----------------------------------------------------------------------------*/
+//only tablet
+@media (width: @screen-sm-min){
+  .homePg .sideCol4{left: 160%;}
+  .careerBoxBlue{margin-left: -3px;}
+  .leftArr, .rightArr{ top: 45%;}
+}
+/*pages colors -----------------------------------------------------*/
+//groupColor
+.groupColor.active > a {background: @groupColor !important;}
+.groupColor > a:hover {
+  background: @groupColor !important;
+  color:#fff !important;
+} 
+.groupColor .dropdown-menu > li > a {
+  color: @groupColor;
+  &:hover,
+  &:focus {
+    background-color: @groupColor;
+    color: #fff;
+  }
+}
+//careerColor
+.careerColor.active > a {background: @careerColor !important;}
+.careerColor > a:hover {
+  background: @careerColor !important;
+  color:#fff !important;
+} 
+.careerColor .dropdown-menu > li > a {
+  color: @careerColor;
+  &:hover,
+  &:focus {
+    background-color: @careerColor;
+    color: #fff;
+  }
+}
+//passengersColor
+.passengersColor.active  > a {background: @passengersColor !important;} 
+.passengersColor > a:hover {
+  background: @passengersColor !important;
+  color:#fff !important;
+}
+.passengersColor .dropdown-menu > li > a {
+  color: @passengersColor;
+  &:hover,
+  &:focus {
+    background-color: @passengersColor;
+    color: #fff;
+  }
+}
+//businessColor
+.businessColor.active  > a  {background: @businessColor !important;}
+.businessColor > a:hover {
+  background: @businessColor !important;
+  color:#fff !important;
+} 
+.businessColor .dropdown-menu > li > a {
+  color: @businessColor;
+  &:hover,
+  &:focus {
+    background-color: @businessColor;
+    color: #fff;
+  }
+}
+//newsColor
+.newsColor.active  > a  {background: @newsColor !important;} 
+.newsColor > a:hover {
+  background: @newsColor !important;
+  color:#fff !important;
+}
+.newsColor .dropdown-menu > li > a {
+  color: @newsColor;
+  &:hover,
+  &:focus {
+    background-color: @newsColor;
+    color: #fff;
+  }
+}
+//bullets and numbered lists
+ul.bulletsLists{ 
+  margin-left: 18px;
+  li{
+    list-style: disc;
+    padding-left: 0px;
+  }
+}
+ol.numberedLists{ 
+  margin-left: 18px;
+  li{
+    list-style: decimal;
+    padding-left: 0px;
+  }
+}
+//intranet page
+.infoSmallintranet{
+    background: @brand-primary url(../images/blueCircle.png) no-repeat right top;;
+    border-right: 4px solid #fff;
+    border-left: 4px solid #fff;
+    position: relative;
+    .innerIntro{
+      h2{
+        color:#fff !important;
+        font-size: 27px;
+        line-height: 32px;
+      }
+      p{
+        color:#fff !important;
+        font-size: 14px;
+        line-height: 17px;
+        padding-top: 5px;
+      }
+    } 
+    .pageInfo{
+      margin: 0 0px 0px 0px;
+    }
+    .carousel-inner{
+      min-height: 230px;
+      padding-bottom: 30px;
+      .item{
+        min-height: 230px;
+        .filler{
+          font-weight: bold;
+          a{
+            color:#fff;
+            &:hover{text-decoration: underline;}
+          }
+        }
+      }
+    }
+    .tools{
+      position: absolute;
+      bottom:40px;
+      left:10px;
+      width: 97%;
+      .carousel-indicators {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 15;
+        width: 50%;
+        margin-left: 0;
+        padding-left: 0;
+        list-style: none;
+        text-align: left;
+        li {border:0;}
+      }
+      .rightBottomBtn{
+        bottom:-25px;
+        span{color: @brand-primary;}
+      }
+      .right{right:50px;}
+    }
+    
+}
+.intranetNews{
+  border-bottom: 7px solid @body-bg;
+  padding: 10px 0 0 10px;
+  .col-sm-2{
+    width: 28.5714%;
+    float: none;
+    height: 100% !important;
+    background: @brand-innerLight;
+    position: absolute;
+    right:-1px;
+    top: 0;
+    border-right:7px solid #fff;
+    border-bottom: 7px solid @body-bg;
+  }
+  .newsItem{
+    padding-bottom: 15px;   
+  }
+  h2{
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 5px;
+      font-family: @museo-slab !important;
+  }
+  p{
+    font-size: 12px;
+    color:#010101;
+    a{
+      color:#010101;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  .localeNews{
+    width: 52%;
+    float: left;
+    .newsCntr{
+      img{
+        float: left;
+         width: 78px;
+         padding: 0 15px 15px 0;
+      }
+    }
+  }
+  .generalNews{
+    width: 40%;
+    float: right;
+    padding-left: 3%;
+    border-left: 7px solid @body-bg;
+    .newsItem{
+      padding-right: 4%;   
+    }
+  }
+  p.data{
+    color:#666a74 !important;
+    a{
+      color:#666a74;
+    }
+  }
+}
+.greenListCntr{
+  padding-top:14%;
+  width: 28.5714%;
+  z-index: 9999;
+  position: absolute;
+  right:-1px;
+  top: 0;
+}
+.greenList{
+  background: @brand-innerLight url(../images/greenCircle.png) no-repeat right top;
+  border-right: 7px solid #fff;
+  padding:0 10px 10px 15px;
+  a{
+    color:#fff !important;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  ul li{
+    color:#fff !important;
+    font-family: @proxima-bold;
+    padding: 0 0 10px 0;
+    font-size: 13px;
+    line-height: 17px;
+  }
+  h2{
+    font-size:18px;
+    color:#fff !important;
+    padding:15px 0 15px 0;
+    margin-bottom: 0px;
+  }
+  h2.lineHeding{
+      border-top:1px solid #fff;
+      margin-top:15px !important;
+  }
+  p{
+    color:#fff !important;
+    font-size: 12px;
+  }
+  p.hed{
+      font-family: @proxima-bold;
+      font-size:16px;
+      line-height: 17px;
+      margin-bottom: 0px;
+    }
+}
+.localBoxes{
+  color:#000;
+  .boxItem{
+    float: left;
+    background-color: #d9d8d2;
+    border:7px solid #fff;
+    border-right:0px solid #fff;
+    padding: 10px 15px;
+    min-height: 200px;
+    font-size: 12px;
+    width: 29%;
+    margin-left:-3.5px;
+    position: relative;
+    h2{
+      font-family: @proxima-regular;
+      font-size: 18px;
+      color:#000 !important;
+      margin-bottom: 3px;
+    }
+    p{
+      margin-bottom: 0px;
+    }
+    li{
+      color:#000 !important;
+      line-height: 15px;
+      padding-bottom: 10px;
+      span{
+        text-transform: uppercase;
+      }
+    }
+    a{
+      color:#000 !important;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  .lastBox{
+    width: 42.6%;
+    li{
+      padding-bottom: 0px;
+    }
+    .rightBottomBtn{
+      right:10px;
+      bottom:10px;
+      span{
+        color: #d9d8d2;
+      }
+    }
+  }
+
+}
+//
+
+html, body {height: 100%;}
+/*.wrapp {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}*/
+.wrapp{
+  height: 100%;
+  margin: 0 auto -69px auto;
+  .cntWrapp{
+    display: block;
+    width: 100%;
+    max-width: 1207px;
+    background-color: #fff;
+    margin:0 auto; 
+    min-height: 100%;
+    padding-bottom: 67px;
+    position: relative;
+    section.content{
+      //min-height: 100%;
+      margin-top:69px;
+      .container{
+        //min-height: 100%;
+      }
+    }
+  }
+
+  footer {
+    margin-top: -67px; /* negative value of footer height */
+    height: 67px;
+    position: relative;
+    //clear:both;
+  }
+}
+//body{background-color: #f00}
+.navbar-fixed-top{position: fixed;}
+//desktop ----------------------------------------------------------
+@media (min-width: 769px){
+  .career .wrapp{
+      overflow-x: hidden !important;
+  } 
+}
+//tablet -----------------------------------------------------------
+@media (width: @screen-sm-min){
+  .infoSmallintranet{width: 100%;}
+  .career .wrapp{
+    overflow:hidden;
+    .col-sm-2{
+      width: 305px;
+      float: left;
+      height:100%;
+    }
+  }  
+}
+//mobile -----------------------------------------------------------
+@media (max-width: @screen-xs-max){
+  .wrapp{
+    height: 100%;
+    .cntWrapp{
+      section.content{
+        margin-top:42px;
+        padding-bottom: 7px;
+      }
+    }
+    footer{
+      min-width: 100% !important;
+      .footerLogo{
+        padding-top: 15px;
+      }
+      .hideMob{display: none;}
+    }
+  }
+    
+  .infoSmallintranet{
+    padding-top: 60px;
+    .tools{
+      left:2%;
+      width: 96%;
+      bottom:30px;
+      .rightBottomBtn{
+        position: absolute;
+        right:0;
+      }
+      .right{right:40px !important;}
+    }
+  }
+}
+//mobile and tablet
+@media (max-width: 769px){
+  .carousel-inner{
+    padding-bottom: 20px;
+    .item{padding-top: 15px;}     
+  }
+  .greenList{
+    
+  }
+  .greenListCntr{
+    padding-top:0;
+    margin-top: 0;
+    margin-bottom: 7px;
+    position: static;
+    width: auto;
+    margin-left: 7px;
+  }
+  .intranetNews{
+    border-bottom: 0px solid @body-bg;
+    padding: 10px 0 0 10px;
+    .localeNews{
+      width: 100%;
+      float: none;
+    }
+    .generalNews{
+      width: 100%;
+      float: none;
+      padding-left: 0%;
+      border-left: 0px solid @body-bg;
+      .newsItem{
+        padding-right: 4%;   
+      }
+    }
+  }
+  .localBoxes{
+    .boxItem{
+      float: none;
+      //border:5px solid #fff;
+      border-right:7px solid #fff;
+      border-top:0px solid #fff;
+      width: 100%;
+      margin-left:0px;
+      min-height: auto;
+    }
+    .lastBox{
+      width: 100#;
+      .rightBottomBtn{
+        position: absolute;
+      }
+    }
+  }
+}
+//tablet only corrections
+@media (width: 768px){
+  //footer {display: block !important;}
+  #carousel-career {
+    .bannerBox{
+      width: 70%;
+    }
+    .item{
+      min-height: 670px;
+      height: 100%;
+    }
+  }
+}
+

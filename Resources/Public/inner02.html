@@ -8,7 +8,7 @@
 <title>KEO</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="js/modernizr-2.6.2.min.js"></script>
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/keolisStyles.css" rel="stylesheet">
 <!--[if IE 8]>
 <link href="css/ie8.css" rel="stylesheet">
 <![endif]-->
@@ -25,7 +25,7 @@
       <a class="navbar-brand" href="index.html"><img src="images/logo.jpg" class="img-responsive" alt="Keolis"></a> </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-left">
-        <li class="redColor dropdown pdd1"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Rejs med os</a>
+        <li class="groupColor dropdown pdd1"> <a href="inner01.html" class="dropdown-toggle disabled" data-toggle="dropdown">Rejs med os</a>
           <ul class="dropdown-menu navOneMenu" role="menu">
             <li class="first"><a href="#">Horaires</a></li>
             <li><a href="#">Itinéraires</a></li>
@@ -33,10 +33,26 @@
             <li><a href="#">Plans</a></li>
           </ul>
         </li>
-        <li class="blueColor pdd1"><a href="#">Om Keolis</a></li>
-        <li class="turquoiseColor pdd1"><a href="#">Kundeservice</a></li>
-        <li class="greenColor pdd1"><a href="career.html">Job &amp; Karriere</a></li>
-        <li class="yellowColor pdd1"><a href="#">Aktuelt</a></li>
+        <li class="passengersColor pdd1 dropdown"><a href="#" class="dropdown-toggle disabled" data-toggle="dropdown">Om Keolis</a>
+          <ul class="dropdown-menu navOneMenu" role="menu">
+            <li class="first"><a href="#">Sample</a></li>
+          </ul>
+        </li>
+        <li class="businessColor pdd1 dropdown"><a href="#" class="dropdown-toggle disabled" data-toggle="dropdown">Kundeservice</a>
+          <ul class="dropdown-menu navTwoMenu" role="menu">
+            <li class="first"><a href="#">Sample</a></li>
+          </ul>
+        </li>
+        <li class="careerColor pdd1 dropdown"><a href="career.html" class="dropdown-toggle disabled" data-toggle="dropdown">Job &amp; Karriere</a>
+          <ul class="dropdown-menu navTwoMenu" role="menu">
+            <li class="first"><a href="#">Sample</a></li>
+          </ul>
+        </li>
+        <li class="newsColor pdd1 dropdown"><a href="#" class="dropdown-toggle disabled" data-toggle="dropdown">Aktuelt</a>
+          <ul class="dropdown-menu navOneMenu" role="menu">
+            <li class="first"><a href="#">Sample</a></li>
+          </ul>
+        </li>
         <li class="loginNavs"><a href="#">Log in</a></li>
         <li class="loginNavs"><a href="#">Log ud</a></li>
       </ul>
@@ -46,201 +62,209 @@
   </div>
 </div>
 <!--content area-->
-<section class="content">
-  <div class="container"> 
-    <!--main content area-->
-    <div class="row">
-      <div class="pageInfo clearfix">
-        <ol class="breadcrumb pull-left hidden-xs">
-          <li class="first">Vous êtes ici :</li>
-          <li><a href="#">Accueil</a></li>
-          <li><a href="#">Le Réseau</a></li>
-          <li class="active">Qualité</li>
-        </ol>
-        <ul>
-          <li><a href="#"><img src="images/printIcon.png" alt=""></a></li>
-          <li><a href="#"><img src="images/socialIco.png" alt=""></a></li>
-        </ul>
-      </div>
-      <div class="container borderGrayBottom">
-        <div class="col-sm-3 hidden-xs"><img src="images/innerImg1.jpg" class="img-responsive" alt=""></div>
-        <div class="col-sm-4">
-          <div class="innerIntro">
-            <h1><span class="proximaLight">Une organisation</span><br class="hidden-xs">
-              au service de la qualité</h1>
-            <p>Pour garantir un réseau KeoReseau, équitable, accessible et confortable, nous utilisons de nombreux outils qualité afin de contrôler l’efficacité du travail de l’exploitant du réseau, l’entreprise Keolis.</p>
-          </div>
+<div class="wrapp">
+<div class="cntWrapp clearfix">
+  <section class="content">
+    <div class="container"> 
+      <!--main content area-->
+      <div class="row contentMargin">
+        <div class="pageInfo clearfix">
+          <ol class="breadcrumb pull-left hidden-xs">
+            <li class="first">Vous êtes ici :</li>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Le Réseau</a></li>
+            <li class="active">Qualité</li>
+          </ol>
+          <ul class="share">
+            <li><a href="#"><img src="images/printIcon.png" alt=""></a></li>
+            <li class="shareIcons"><a href="javascript:void(0)"><img src="images/socialIco.png" alt=""></a>
+              <div class="socialIcons"> <a title="Twitter" target="_blank" class="shareTtwitter" href="http://www.twitter.com/share?url=http%3A%2F%2Fwww.keolis.se%2F">Twitter</a> <a title="Facebook" target="_blank" class="shareFacebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.keolis.se%2F">Facebook</a> <a title="Email" target="_blank" class="shareEmail" href="mailto:?subject=keolis.se&amp;body=http%3A%2F%2Fwww.keolis.se%2F">Email</a> </div>
+            </li>
+          </ul>
         </div>
-      </div>
-      <div class="container borderGrayBottom row-table">
-        <div class="col-sm-2 tabletFullWidth row-table-cell">
-          <div class="halfWblock">
-            <h2><span class="proximaLight">UNE</span><br class="visibleDesktop">
-              organisation<br class="visibleDesktop">
-              <span class="proximaLight">cohérente</span></h2>
-            <p>Se mettre d’accord sur les critères, la façon dont on les mesure, la pertinence des actions pour qu’au final, le voyageur bénéficie du meilleur.</p>
-            <p>Plusieurs «normes» sont inscrites au contrat signé avec Keolis pour l’exploitation du réseau : la démarche qualité contractuelle (mesures effectuées par Rennes Métropole), des mesures internes « d’autocontrôle » effectuées par  Keolis pour les bus et le contrôle de titres. </p>
-          </div>
-        </div>
-        <div class="col-sm-2 borderGrayLeft tabletFullWidth row-table-cell">
-          <div class="halfWblock">
-            <div class="lineBtmBlock">
-              <h3><span class="proximaLight">Le voyage</span><br class="visibleDesktop">
-                repensé de a > Z</h3>
-              <p>Ce « Défi Ingénieurs » se déroule en deux temps : <br>
-                <strong>10 étages à monter, et défis</strong>De janvier à mars, votre première épreuve consiste à affronter. </p>
+        <div class="container borderGrayBottom">
+          <div class="col-sm-3 hidden-xs"><img src="images/innerImg1.jpg" class="img-responsive" alt=""></div>
+          <div class="col-sm-4">
+            <div class="innerIntro">
+              <h1><span class="proximaLight">Une organisation</span><br class="hidden-xs">
+                au service de la qualité</h1>
+              <p>Pour garantir un réseau KeoReseau, équitable, accessible et confortable, nous utilisons de nombreux outils qualité afin de contrôler l’efficacité du travail de l’exploitant du réseau, l’entreprise Keolis.</p>
             </div>
-            <h3><span class="proximaLight">Le voyageur</span><br class="visibleDesktop">
-              au cœur du réseau</h3>
-            <p><strong>Gérez une crise en situation réelle</strong> <br>
-              Si vous sortez vainqueur de la « Tour SNCF », vous aurez la chance de participer à un événement .</p>
           </div>
         </div>
-        <div class="col-sm-3 visibleDesktop row-table-cell"><img src="images/innerImg2.jpg" alt="" class="borderGrayLeft img-responsive"></div>
-      </div>
-      <div class="container row-table tblStat">
-        <div class="col-sm-2 visibleDesktop row-table-cell addBox">
-            <p><span>97%</span><br> des voyageurs satisfaits <br>
+        <div class="container borderGrayBottom row-table">
+          <div class="col-sm-2 tabletFullWidth row-table-cell">
+            <div class="halfWblock">
+              <h2><span class="proximaLight">UNE</span><br class="visibleDesktop">
+                organisation<br class="visibleDesktop">
+                <span class="proximaLight">cohérente</span></h2>
+              <p>Se mettre d’accord sur les critères, la façon dont on les mesure, la pertinence des actions pour qu’au final, le voyageur bénéficie du meilleur.</p>
+              <p>Plusieurs «normes» sont inscrites au contrat signé avec Keolis pour l’exploitation du réseau : la démarche qualité contractuelle (mesures effectuées par Rennes Métropole), des mesures internes « d’autocontrôle » effectuées par  Keolis pour les bus et le contrôle de titres. </p>
+            </div>
+          </div>
+          <div class="col-sm-2 borderGrayLeft tabletFullWidth row-table-cell">
+            <div class="halfWblock">
+              <div class="lineBtmBlock">
+                <h3><span class="proximaLight">Le voyage</span><br class="visibleDesktop">
+                  repensé de a > Z</h3>
+                <p>Ce « Défi Ingénieurs » se déroule en deux temps : <br>
+                  <strong>10 étages à monter, et défis</strong>De janvier à mars, votre première épreuve consiste à affronter. </p>
+              </div>
+              <h3><span class="proximaLight">Le voyageur</span><br class="visibleDesktop">
+                au cœur du réseau</h3>
+              <p><strong>Gérez une crise en situation réelle</strong> <br>
+                Si vous sortez vainqueur de la « Tour SNCF », vous aurez la chance de participer à un événement .</p>
+            </div>
+          </div>
+          <div class="col-sm-3 visibleDesktop row-table-cell"><img src="images/innerImg2.jpg" alt="" class="borderGrayLeft img-responsive"></div>
+        </div>
+        <div class="container row-table tblStat">
+          <div class="col-sm-2 visibleDesktop row-table-cell addBox">
+            <p><span>97%</span><br>
+              des voyageurs satisfaits <br>
               et très satisfaits du réseau*</p>
-        </div>
-        <div class="col-sm-5 tabletFullWidth row-table-cell clearfix statBox">
-          <div class="halfWblock">
-            <div class="col-sm-3">
-              <h2><span class="proximaLight">Des</span> <br class="hidden-xs">
-                statistiques <br class="hidden-xs">
-                <span class="proximaLight">au service de <br class="hidden-xs">
-                l’amélioration</span></h2>
-            </div>
-            <div class="col-sm-4">
-              <p>Se mettre d’accord sur les critères, la façon dont on les mesure, la pertinence des actions mises en place pour qu’au final, le voyageur bénéficie du meilleur service..<br>
-                Plusieurs «normes» sont inscrites au contrat signé avec Keolis Rennes pour l’exploitation du réseau.<br>
-                sont inscrites au contrat signé avec Keolis pour l’exploitation du réseau. a démarche qualité contractuelle (mesures effectuées par la Métropole).</p>
+          </div>
+          <div class="col-sm-5 tabletFullWidth row-table-cell clearfix statBox">
+            <div class="halfWblock">
+              <div class="col-sm-3">
+                <h2><span class="proximaLight">Des</span> <br class="visibleDesktop">
+                  statistiques <br class="visibleDesktop">
+                  <span class="proximaLight">au service de <br class="visibleDesktop">
+                  l’amélioration</span></h2>
+              </div>
+              <div class="col-sm-4">
+                <p>Se mettre d’accord sur les critères, la façon dont on les mesure, la pertinence des actions mises en place pour qu’au final, le voyageur bénéficie du meilleur service..<br>
+                  Plusieurs «normes» sont inscrites au contrat signé avec Keolis Rennes pour l’exploitation du réseau.<br>
+                  sont inscrites au contrat signé avec Keolis pour l’exploitation du réseau. a démarche qualité contractuelle (mesures effectuées par la Métropole).</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      
+      <!--search toggle-->
+      <div class="headerDropp searchDropp hidden-xs">
+        <form method="post" action="#">
+          <div class="clearfix">
+            <input type="text" class="search-control pull-left" placeholder="Entrez un mot clef, le nom d’une station, un arrêt, un service...">
+            <input type="button"  class="btn btn-rechercher col-md-1  pull-right" value="Rechercher">
+          </div>
+        </form>
+      </div>
+      <div class="headerDropp loginDropp hidden-xs">
+        <form method="post" action="#">
+          <div class="clearfix">
+            <p>Du er logget ind som Joakim Nørholm Vasehus (1002)</p>
+            <input type="button"  class="btn btn-rechercher col-md-1  pull-right" value="Log ud">
+          </div>
+        </form>
+      </div>
     </div>
-    
-    <!--search toggle-->
-    <div class="headerDropp searchDropp hidden-xs">
-      <form method="post" action="#">
-        <div class="clearfix">
-          <input type="text" class="search-control pull-left" placeholder="Entrez un mot clef, le nom d’une station, un arrêt, un service...">
-          <input type="button"  class="btn btn-rechercher col-md-1  pull-right" value="Rechercher">
-        </div>
-      </form>
-    </div>
-    
-    <div class="headerDropp loginDropp hidden-xs">
-      <form method="post" action="#">
-        <div class="clearfix">
-          <p>Du er logget ind som Joakim Nørholm Vasehus (1002)</p>
-          <input type="button"  class="btn btn-rechercher col-md-1  pull-right" value="Log ud">
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
+  </section>
+</div>
 <!--footer area-->
-<footer class="hidden-xs">
-  <div class="siteMap">
+<footer class="clearfix">
+  <div class="siteMap hideMob">
     <div class="container">
       <div class="col-md-5 col-sm-5">
         <div class="mapUnit pull-left">
           <h3>Rejs med os</h3>
           <ul>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
           </ul>
         </div>
         <div class="mapUnit pull-left">
           <h3>Om keolis</h3>
           <ul>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
           </ul>
         </div>
         <div class="mapUnit pull-left">
           <h3>Kundeservice</h3>
           <ul>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
           </ul>
         </div>
         <div class="mapUnit pull-left">
           <h3>Job &amp; Karriere</h3>
           <ul>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
           </ul>
         </div>
         <div class="mapUnit pull-left">
           <h3>Aktuelt</h3>
           <ul>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
           </ul>
         </div>
       </div>
       <div class="col-md-2 col-sm-2">
         <div class="mapRightSegment">
           <ul>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
-  <div class="container visibleCnt">
-    <div class="col-md-2 col-sm-1">
-      <div class="footerLogo">
-        <p>Less savoir-faire</p>
-        <img src="images/footerLogo.png" alt="Keolis"> </div>
+  <div class="visibleCntWrapp">
+    <div class="container visibleCnt">
+      <div class="col-md-2 col-sm-1">
+        <div class="footerLogo">
+          <p class="hideMob">Less savoir-faire</p>
+          <img src="images/footerLogo.png" alt="Keolis"> </div>
+      </div>
+      <div class="col-md-3 col-sm-4 hideMob">
+        <div class="navUnit pull-left">
+          <ul>
+            <li><a href="javascript:void(0)">Adresser</a></li>
+            <li><a href="javascript:void(0)">Pressekontakt</a></li>
+          </ul>
+        </div>
+        <div class="navUnit pull-left">
+          <ul>
+            <li><a href="javascript:void(0)">Glemte sager</a></li>
+            <li><a href="javascript:void(0)">Cookiepolitik</a></li>
+          </ul>
+        </div>
+        <div class="navUnit pull-left">
+          <ul>
+            <li><a href="javascript:void(0)">Login</a></li>
+            <li><a href="javascript:void(0)">Miljøcertificering</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-2 hideMob">
+        <div class="pull-left socialIcons">
+          <ul>
+            <li><a href="javascript:void(0)" class="twitter"><span class="hidden">Twitter</span></a></li>
+            <li><a href="javascript:void(0)" class="facebook"><span class="hidden">Facebook</span></a></li>
+            <li><a href="javascript:void(0)" class="linkedIn"><span class="hidden">LinkedIn</span></a></li>
+          </ul>
+        </div>
+        <a href="javascript:void(0)" class="footerplan pull-right">Plan du site</a> </div>
     </div>
-    <div class="col-md-3 col-sm-4">
-      <div class="navUnit pull-left">
-        <ul>
-          <li><a href="#">Adresser</a></li>
-          <li><a href="#">Pressekontakt</a></li>
-        </ul>
-      </div>
-      <div class="navUnit pull-left">
-        <ul>
-          <li><a href="#">Glemte sager</a></li>
-          <li><a href="#">Cookiepolitik</a></li>
-        </ul>
-      </div>
-      <div class="navUnit pull-left">
-        <ul>
-          <li><a href="#">Login</a></li>
-          <li><a href="#">Miljøcertificering</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-md-2 col-sm-2">
-      <div class="pull-left socialIcons">
-        <ul>
-          <li><a href="#" class="twitter"><span class="hidden">Twitter</span></a></li>
-          <li><a href="#" class="facebook"><span class="hidden">Facebook</span></a></li>
-          <li><a href="#" class="linkedIn"><span class="hidden">LinkedIn</span></a></li>
-        </ul>
-      </div>
-      <a href="#" class="footerplan pull-right">Plan du site</a> </div>
   </div>
 </footer>
+</div>
 <!-- javascript --> 
 <script src="js/jquery.min.js"></script> 
 <script src="js/bootstrap.min.js"></script> 

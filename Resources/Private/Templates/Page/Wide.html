@@ -17,19 +17,20 @@
     <f:section name="BodyTagAttributes"> class="inner"</f:section>
 
     <f:section name="Content">
-        
-        <div class="container"> 
-            <!--main content area-->
-            <div class="row">
-                <f:render partial="Pageinfo" />
-                <!--TYPO3SEARCH_begin-->
-                <v:content.render column="0"/>
-                <!--TYPO3SEARCH_end-->
-            </div>
-            <f:render partial="Searchbox" />
-            <f:render partial="Loginstatus" />        
-        </div>
-        
+		<section class="content">        
+			<div class="container"> 
+				<!--main content area-->
+				<div class="row">
+					<f:render partial="Pageinfo" />
+					<!--TYPO3SEARCH_begin-->
+					<v:content.render column="0"/>
+					<!--TYPO3SEARCH_end-->
+				</div>
+				<f:render partial="Searchbox" />
+				<f:render partial="Loginstatus" />        
+			</div>
+		</section>	        
     </f:section>
+
     
 </div>

@@ -11,23 +11,24 @@ lib.menu{
 
         NO = 1
         NO{
-            wrapItemAndSub = <li class="redColor pdd1">|</li>
+			wrapItemAndSub  = <li class="groupColor pdd1">|</li> || <li class="passengersColor pdd1">|</li> |*| <li class="businessColor pdd1">|</li> |*| <li class="careerColor pdd1">|</li> || <li class="newsColor pdd1">|</li> 
         }
 
         ACT = 1
         ACT{
-            wrapItemAndSub = <li class="redColor pdd1 active">|</li>
+			wrapItemAndSub  = <li class="groupColor pdd1 active">|</li> || <li class="passengersColor pdd1 active">|</li> |*| <li class="businessColor pdd1 active">|</li> |*| <li class="careerColor pdd1 active">|</li> || <li class="newsColor pdd1 active">|</li> 
+
         }
 
         IFSUB = 1
         IFSUB{
-            wrapItemAndSub = <li class="redColor dropdown pdd1">|</li>
+			wrapItemAndSub  = <li class="groupColor dropdown pdd1">|</li> || <li class="passengersColor dropdown pdd1">|</li> |*| <li class="businessColor dropdown pdd1">|</li> |*| <li class="careerColor dropdown pdd1">|</li> || <li class="newsColor dropdown pdd1">|</li> 
             ATagParams = class="dropdown-toggle disabled" data-toggle="dropdown"
         }
 
         ACTIFSUB = 1
         ACTIFSUB{
-            wrapItemAndSub = <li class="redColor dropdown pdd1 active">|</li>
+			wrapItemAndSub  = <li class="groupColor dropdown pdd1 active">|</li> || <li class="passengersColor dropdown pdd1 active">|</li> |*| <li class="businessColor dropdown pdd1 active">|</li> |*| <li class="careerColor dropdown pdd1 active">|</li> || <li class="newsColor dropdown pdd1 active">|</li> 
             ATagParams = class="dropdown-toggle disabled" data-toggle="dropdown"
         }
 
@@ -47,9 +48,11 @@ lib.menu{
 lib.sitemap = HMENU
 lib.sitemap{
 
-    wrap = <div class="siteMap"><div class="container"><div class="col-md-5 col-sm-5">|</div></div></div>
+    wrap = <div class="siteMap hideMob"><div class="container"><div class="col-md-5 col-sm-5">|</div></div></div>
     
-    entryLevel = 0
+    special = directory
+    special.value.data = leveluid:0
+    special.value.override = {$plugin.tx_keolis.menu_starting_point}
 
     1 = TMENU
     1{
@@ -295,6 +298,7 @@ lib.newsItem{
                         table = tx_news_domain_model_news
                         fieldName = fal_media
                     }
+                    5.maxItems = 1
                     5.renderObj = IMG_RESOURCE
                     5.renderObj{
                         file{
@@ -317,6 +321,7 @@ lib.newsItem{
                         table = tx_news_domain_model_news
                         fieldName = fal_media
                     }
+                    maxItems = 1
                     renderObj = IMG_RESOURCE
                     renderObj{
                         file{
@@ -343,7 +348,7 @@ lib.newsItem{
 
                     20 = TEXT
                     20.field = teaser
-                    20.crop = 30 | ...
+                    20.crop = 70 | ...
                     20.wrap = <p>|</p>
                 }
             }

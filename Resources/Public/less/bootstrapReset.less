@@ -1,0 +1,468 @@
+/* Bootstrap reset ----------------------------------*/
+a {
+  text-decoration: none;
+}
+h1 {
+  margin: 0;
+}
+//lists
+li{
+  list-style: none;
+}
+// Typography -custom -------------------------------
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  text-transform: uppercase;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  margin-top: 0;
+  margin-bottom: (@line-height-computed / 2);
+}
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+}
+ul,
+ol {
+  margin: 0;
+  ul,
+  ol {
+    margin: 0;
+  }
+}
+dl {
+  margin: 0;
+}
+// Grid system custom --------------------------------------
+.container {
+  width:100%;
+  max-width: 1207px;
+  @media (min-width: @screen-sm-min) {
+    width: 100%;
+  }
+}
+.row {
+  background-color: #fff;
+}
+// Forms  custom -------------------------------------------
+fieldset {
+  padding: 10px;
+  margin: 0 2px;
+  width: 100%;
+  border: 1px solid #c0c0c0;
+}
+
+legend {
+  padding: 0 5px;
+  width: 80px;
+  margin-bottom: 15px;
+  color:#595e69;
+}
+output {
+  line-height: 14px;
+}
+
+.form-control {
+  padding: 5px @padding-base-horizontal;
+  line-height: 14px;
+  color: #595e69;
+  .box-shadow(inset 0 1px 1px rgba(0,0,0,0));
+  select&{
+    height: 35px !important;
+  }
+}
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  line-height: 14px;
+  // IE8+ misaligns the text within date inputs, so we reset
+  line-height: 14px ~"\0";
+
+  &.input-sm {
+    line-height: 14px;
+  }
+  &.input-lg {
+    line-height: 14px;
+  }
+}
+.radio,
+.checkbox {
+  min-height: @line-height-computed; 
+}
+.form-control-feedback {
+  line-height: 14px;
+}
+.input-lg + .form-control-feedback {
+  line-height: 14px;
+}
+.input-sm + .form-control-feedback {
+  line-height: 14px;
+}
+
+// Buttons custom ---------------------------------------
+.btn {
+  .button-size(@padding-base-vertical; @padding-base-horizontal; 13px; 14px; @border-radius-base);
+
+  &:active,
+  &.active {
+    .box-shadow(inset 0 0px 0px rgba(0,0,0,0));
+  }
+}
+// Dropdown menus  custom --------------------------------
+.caret {
+  border-top:   0px;
+  border-right: 0px;
+  border-left:  0px;
+}
+.dropdown-menu {
+  .box-shadow(0 6px 12px rgba(0,0,0,0));
+  border: 0 !important;
+  border-radius: 0;
+}
+// Hover/Focus state
+.dropdown-menu > li > a {
+  &:hover,
+  &:focus {
+    color: #fff;
+    //background-color: #055fa3;
+  }
+}
+@media (min-width: @grid-float-breakpoint) {
+  .dropdown-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: @zindex-dropdown;
+    display: none; // none by default, but block on "open" of the menu
+    float: left;
+    min-width: 160px;
+    padding: 0;
+    margin: 2px 0 0; // override default ul
+    list-style: none;
+    font-size: @font-size-base;
+    text-align: left; 
+    background-color: transparent;
+    &.pull-right {
+      right: 0;
+      left: auto;
+    }
+  }
+}
+//mobile
+@media (max-width: @grid-float-breakpoint) {
+  .dropdown-menu {
+    display: block;
+    position: relative;
+    width: 100%;
+    li a{padding-left: 30px !important;}
+  }
+}
+// Navbars custom ----------------------------------------------------
+.navbar {
+  border: 0px solid transparent;
+  text-transform: uppercase;
+  z-index: 10000 !important;
+  @media (min-width: @grid-float-breakpoint) {
+    border-radius: 0;
+  }
+}
+.navbar-header {
+  @media (min-width: @grid-float-breakpoint) {
+    width:135px;
+  }
+}
+.navbar-collapse {
+  padding-right: 0;
+  padding-left:  0;
+  border-top: 0px solid transparent;
+}
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  .navbar-collapse {
+    max-height: @navbar-collapse-max-height;
+
+    @media (max-width: @screen-xs-min) and (orientation: landscape) {
+      max-height: auto;
+    }
+  }
+}
+.container,
+.container-fluid {
+  > .navbar-header,
+  > .navbar-collapse {
+    margin-right: 0;
+    margin-left:  0;
+  }
+}
+// Fix the top/bottom navbars when screen real estate supports it
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  position: absolute;
+}
+.navbar-brand {
+  padding: 0;
+  @media (min-width: @grid-float-breakpoint) {
+    .navbar > .container &,
+    .navbar > .container-fluid & {
+      margin-left: 0;
+    }
+  }
+}
+// Navbar toggle
+.navbar-toggle {
+  float: left;
+  margin-right: 0;
+  padding: 18px 22px;
+  .navbar-vertical-align(50px);
+  border: 0px solid transparent;
+  border-right:1px solid #cdccc5;
+  border-radius: 0;
+}
+.navbar-nav {
+  margin: 0;
+  > li > a {
+    padding: 0 13px;
+  }
+
+  @media (max-width: @grid-float-breakpoint-max) {
+      > li > a {
+        &:hover,
+        &:focus {
+          color:#fff;
+        }
+      }
+    }
+  }
+
+  @media (min-width: @grid-float-breakpoint) {
+    > li {
+      > a {
+        padding-top:    0;
+        padding-bottom: 0;
+      }
+    }
+
+    &.navbar-right:last-child {
+      margin-right: -@navbar-padding-horizontal;
+    }
+  }
+
+
+@media (min-width: @grid-float-breakpoint) {
+  .navbar-left  { .pull-left(); }
+  .navbar-right { .pull-right(); }
+}
+.navbar-form {
+  // Undo 100% width for pull classes
+  @media (min-width: @grid-float-breakpoint) {
+    &.navbar-right:last-child {
+      margin-right: -@navbar-padding-horizontal;
+    }
+  }
+}
+// Default navbar
+.navbar-default {
+  background-color: #fff;
+  border-color: #fff;
+  .navbar-brand {
+    &:hover,
+    &:focus {
+      color: @gray-dark;
+    }
+  }
+  .navbar-nav {
+    > li > a {
+      padding:0 7px;
+      border-radius: 3px;
+      &:hover,
+      &:focus {
+        color: @gray-dark;
+        background-color: #f1f1ef;
+      }
+    }
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: #fff;
+        background-color: @brand-primary;
+      }
+    }
+  }
+  .navbar-toggle {
+    border-color: @navbar-default-toggle-border-color;
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
+  }
+}
+
+// Breadcrumbs  custom -----------------------------------
+.breadcrumb {
+  margin-bottom: 0px;
+  background-color:transparent;
+  color: @breadcrumb-color;
+  font-size: 13px;
+
+  > li {
+    + li:before {
+      padding: 0 3px;
+    }
+  }
+  > li.first {
+    + li:before {
+      content: ""; 
+    }
+  }
+  a{
+    color: @breadcrumb-color;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  > .active {
+    color: @breadcrumb-active-color;
+  }
+}
+// Carousel custom -----------------------------
+.carousel {
+  height: 100%;
+}
+.carousel-inner {
+  height: 100%;
+
+  > .item {
+    height: 100%;
+  }
+}
+.carousel-control {
+  &.left {
+    #gradient > .horizontal(@start-color: rgba(0,0,0,0); @end-color: rgba(0,0,0,0));
+  }
+  &.right {
+    #gradient > .horizontal(@start-color: rgba(0,0,0,0); @end-color: rgba(0,0,0,0));
+  }
+}
+.carousel-indicators {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 15;
+  width: 85%;
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+  li {
+    display: inline-block;
+    width:  13px;
+    height: 13px;
+    margin: 1px;
+    text-indent: -999px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #acacac !important;
+    background-color: #000 \9; // IE8
+    background-color: rgba(0,0,0,0); // IE9
+  }
+  .active {
+    margin: 0;
+    width:  14px;
+    height: 14px;
+    background-color: @carousel-indicator-active-bg !important;
+  }
+}
+
+//responsive image --------------------------------------------------------------
+.img-responsive,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+//modal -------------------------------------------------------------------------
+/*.modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 20%;
+}*/
+//alerts-------------------------------------------------------------------------
+.alert {
+  margin-bottom: 5px;
+  border: 0px solid transparent;
+  border-radius:0;
+  .alert-link {
+    color:#fff;
+    text-decoration: underline;
+    font-weight: normal;
+  }
+}
+.alert-dismissible {
+  padding-right: (@alert-padding + 20);
+
+  // Adjust close link position
+  .close {
+    opacity:0.5;
+    color: #fff;
+    &:hover,
+    &:focus {
+      opacity:1;
+    }
+    span{color: #fff;}
+  }
+}
+.alert-danger {
+  .alert-variant(#ff0000; transparent; #fff);
+}
+.alert-info {
+  .alert-variant(#f2500f; transparent; #fff);
+}
+//share icons
+ul.share li{
+  position: relative;
+  z-index: 9999;
+  .socialIcons{
+    position: absolute;
+    padding-top:30px;
+    top:0px;
+    left:-4px;
+    width: 52px;
+    display: none;
+    a{
+      display: block;
+      overflow: hidden;
+      margin: 0;
+      padding: 12px 0;
+      background: #03acb0 no-repeat 50% 50%;
+      background-size: 23px 18px;
+      color: #fff;
+      text-decoration: none;
+      text-indent: -999px;
+      min-width: 26px;
+      border-top:1px solid #fff;
+      &:hover{
+        background-color: #1d7371;
+      }
+    }
+    a.shareTtwitter{
+       background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAkCAMAAADB/PhjAAAAdVBMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////li2ZAAAAAJnRSTlMAA/ee4iYV++ZyCfDr27R3WDs0GtXFuUQr0b2WZk8Or6aBbSCTYQv2fKoAAAE7SURBVDjLxZTZboMwEEW9sIadhD1kgeT+/yc2RGmwzUBTqVLPG/LReOaiMfs3HHs4j/nuQ9uOInEQIv/M3luAWw4OcXSymQkvAARRm+yJSmhTo8cEL0TCF74FeFf1XifAm3gxrf+sI+eeblCIzfo8xoR7qV/FBVSSxbAtnrhynD6v0BCjGXLafB/5j8ss6NwM3cOM5D0MQqX7xe3nGCbZNKA9995gk0Z2pVcpQZ/xAw9bJS+35LjXf9YxxCZWEQ+Krtam/aMaz/6w5cq+Zjo7vwnEmk4uSRqAJiIXyMUK/q90j97vNKL1O1shoexyPq+0cDoycEf5mZd3oJzuJaz1NS2SPrOztPNA2kbkRxcbHBZPUGat2/JEvJ2XtdIVI8laSr5ztkbdhfqEsmKb8MyXhRe4gVVIP+fsD/gCdr9rxLShgAgAAAAASUVORK5CYII=');
+    }
+    a.shareFacebook{
+      background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAkCAMAAADB/PhjAAAAM1BMVEUAAAD///////////////////////////////////////////////////////////////+3leKCAAAAEHRSTlMAh5YRVfHYwaxqPemNe1QBEZF7PwAAAF5JREFUOMvt0UkKwCAQRFE7HcdMff/TxoibgGDXSgT/ruDtyjTjyx9SMopum6GaJxGAPw7iSSAeMU5V0p5T81CGmm/jOTOflfNXh8s/i3GHcY/xgHHCeJzp1cUXn4q/CGcTjE+1CRcAAAAASUVORK5CYII=')
+    }
+    a.shareEmail{
+      background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAkCAMAAADB/PhjAAAAbFBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8+T+BWAAAAI3RSTlMA4fn96wPbDfHUlSQTBrdpQzcrrh2GYD7CoHpuVMq9SeSNzFxdifMAAAFZSURBVDjLzdXbboMwDAZglyZQzmcohZZ1ef933I8CDZE5aDfTfNOKfHJixwhSv4q/4F1MJxF36+yJd6y95JP9UuP3GR3p6BukvmhO/VUpN9zXoavUNaWF0+AoJfI9nQulnIEMp/am1G3c1iPWREtrTsUXMjRbunFACrI5VT7O9+D6gbr8imyOiO6oPpA2lgEe3iPinOISS2VsrHnEOEvFNjScH9Qqh3HeBtOsI96C6yZTdlPg+REPBbYHGvRFI0S4zz0c1s2nAen76/zX9/a4TDAJIUVPZNVDWuBAidzhAdJmeriXVyDDJu9tnsKkn1enk9ZDxjPUFtAcdb3a0sk4D/UxWciXbo/No7kJPDysuJ7N4zmHCfsyXtLw+YQtl1ZVhveov9mkpj2Gj+huTQfxnm5k4dPdlfKIyxL3XWgudptC9jQJcD13FZ1EJcBmjqk+jdyZ5L/6HPwABHJYMI634N8AAAAASUVORK5CYII=')
+    }
+  }
+}
+ul.share li.shareIcons:hover .socialIcons{display: block;}

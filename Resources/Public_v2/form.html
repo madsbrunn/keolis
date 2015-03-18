@@ -1,0 +1,255 @@
+<!doctype html>
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>KEO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="js/modernizr-2.6.2.min.js"></script>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!--[if IE 8]>
+<link href="css/ie8.css" rel="stylesheet">
+<![endif]-->
+<script src="js/respond.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<div class="navbar navbar-default navbar-fixed-top header" role="navigation"><!--header area-->
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="index.html"><img src="images/logo.jpg" class="img-responsive" alt="Keolis"></a> </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-left">
+        <li class="redColor dropdown pdd1"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Rejs med os</a>
+          <ul class="dropdown-menu navOneMenu" role="menu">
+            <li class="first"><a href="#">Horaires</a></li>
+            <li><a href="#">Itinéraires</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Plans</a></li>
+          </ul>
+        </li>
+        <li class="blueColor pdd1"><a href="#">Om Keolis</a></li>
+        <li class="turquoiseColor pdd1"><a href="#">Kundeservice</a></li>
+        <li class="greenColor pdd1"><a href="career.html">Job &amp; Karriere</a></li>
+        <li class="yellowColor pdd1"><a href="#">Aktuelt</a></li>
+        <li class="loginNavs"><a href="#">Log in</a></li>
+        <li class="loginNavs"><a href="#">Log ud</a></li>
+      </ul>
+    </div>
+    <div class="searchBtn logInBtn hidden-xs"><a href="javascript:void(0)"></a></div>
+    <div id="searchBtn" class="searchBtn hidden-xs"><a href="javascript:void(0)"></a></div>
+  </div>
+</div>
+<!--content area-->
+<section class="content">
+  <div class="container fullminHeight"> 
+    <!--main content area-->
+       <div class="row formExample">
+        <h1>Form example</h1>
+        <form action="#" role="form">
+          <div class="form-group">
+            <label for="exampleInput">Text input</label>
+            <input type="text" id="exampleInput" class="form-control" placeholder="Text input">
+          </div>
+          <div class="form-group">
+            <label >Textarea</label>
+            <textarea class="form-control" rows="3"></textarea>
+          </div>
+          <div class="checkbox">
+            <p><strong>Checkbox</strong></p>
+            <label>
+              <input type="checkbox" value="">
+              Option one </label>
+          </div>
+          <div class="checkbox disabled">
+            <label>
+              <input type="checkbox" value="" disabled>
+              Disabled </label>
+          </div>
+          <div class="radio">
+            <p><strong>Radio</strong></p>
+            <label>
+              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+              Option one</label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+              Option two</label>
+          </div>
+          <div class="radio disabled">
+            <label>
+              <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+              Disabled </label>
+          </div>
+          <p>Inline checkboxes and radios</p>
+          <div class="form-group">
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox1" value="option1">
+              1 </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox2" value="option2">
+              2 </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox3" value="option3">
+              3 </label>
+          </div>
+          <div class="form-group">
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+              1 </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+              2 </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+              3 </label>
+          </div>
+          <div class="form-group">
+            <p>Select</p>
+            <select class="form-control">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    <!--search toggle-->
+    <div class="headerDropp searchDropp hidden-xs">
+      <form method="post" action="#">
+        <div class="clearfix">
+          <input type="text" class="search-control pull-left" placeholder="Entrez un mot clef, le nom d’une station, un arrêt, un service...">
+          <input type="button"  class="btn btn-rechercher col-md-1  pull-right" value="Rechercher">
+        </div>
+      </form>
+    </div>
+    
+    <div class="headerDropp loginDropp hidden-xs">
+      <form method="post" action="#">
+        <div class="clearfix">
+          <p>Du er logget ind som Joakim Nørholm Vasehus (1002)</p>
+          <input type="button"  class="btn btn-rechercher col-md-1  pull-right" value="Log ud">
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<!--footer area-->
+<footer class="hidden-xs">
+  <div class="siteMap">
+    <div class="container">
+      <div class="col-md-5 col-sm-5">
+        <div class="mapUnit pull-left">
+          <h3>Rejs med os</h3>
+          <ul>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+          </ul>
+        </div>
+        <div class="mapUnit pull-left">
+          <h3>Om keolis</h3>
+          <ul>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+          </ul>
+        </div>
+        <div class="mapUnit pull-left">
+          <h3>Kundeservice</h3>
+          <ul>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+          </ul>
+        </div>
+        <div class="mapUnit pull-left">
+          <h3>Job &amp; Karriere</h3>
+          <ul>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+          </ul>
+        </div>
+        <div class="mapUnit pull-left">
+          <h3>Aktuelt</h3>
+          <ul>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-2">
+        <div class="mapRightSegment">
+          <ul>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container visibleCnt">
+    <div class="col-md-2 col-sm-1">
+      <div class="footerLogo">
+        <p>Less savoir-faire</p>
+        <img src="images/footerLogo.png" alt="Keolis"> </div>
+    </div>
+    <div class="col-md-3 col-sm-4">
+      <div class="navUnit pull-left">
+        <ul>
+          <li><a href="#">Adresser</a></li>
+          <li><a href="#">Pressekontakt</a></li>
+        </ul>
+      </div>
+      <div class="navUnit pull-left">
+        <ul>
+          <li><a href="#">Glemte sager</a></li>
+          <li><a href="#">Cookiepolitik</a></li>
+        </ul>
+      </div>
+      <div class="navUnit pull-left">
+        <ul>
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Miljøcertificering</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-2 col-sm-2">
+      <div class="pull-left socialIcons">
+        <ul>
+          <li><a href="#" class="twitter"><span class="hidden">Twitter</span></a></li>
+          <li><a href="#" class="facebook"><span class="hidden">Facebook</span></a></li>
+          <li><a href="#" class="linkedIn"><span class="hidden">LinkedIn</span></a></li>
+        </ul>
+      </div>
+      <a href="#" class="footerplan pull-right">Plan du site</a> </div>
+  </div>
+</footer>
+<!-- javascript --> 
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/plugins.js"></script>
+<script src="js/customJS.js"></script> 
+<script type="text/javascript">$(function () {default_docready();});</script>
+</body>
+</html>

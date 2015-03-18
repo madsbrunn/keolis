@@ -20,29 +20,28 @@
     <f:section name="BodyTagAttributes"> class="inner"</f:section>
 
     <f:section name="Content">
-        <div class="container articleRow"> 
-            <div class="row clearfix">
-                <div class="col-sm-5 pull-left tabletFullWidth">
-                    <div class="infoSmall articleInfo">
-                        <f:render partial="Pageinfo" />                    
-                    </div>
-                    <v:content.render column="0"/>
-                </div>
-                <div class="col-sm-2 clearLR pull-right">
-                    <!--TYPO3SEARCH_begin-->
-                    <v:content.render column="1"/>
-                    <!--TYPO3SEARCH_end-->
-                </div>
-            </div>
-            
-            <!--search toggle-->
-            <f:render partial="Searchbox" />
-            <f:render partial="Loginstatus" />        
-        </div>
-        
-        
-        
-        
+		<section class="content">
+			<div class="container articleRow"> 
+				<div class="row clearfix">
+					<div class="col-sm-5 pull-left tabletFullWidth">
+						<div class="infoSmall articleInfo">
+							<f:render partial="Pageinfo" />                    
+						</div>
+						<v:content.render column="0"/>
+					</div>
+					<div class="col-sm-2 clearLR pull-right">
+						<!--TYPO3SEARCH_begin-->
+						<v:content.render column="1"/>
+						<!--TYPO3SEARCH_end-->
+					</div>
+				</div>
+
+				<!--search toggle-->
+				<f:render partial="Searchbox" />
+				<f:render partial="Loginstatus" />        
+			</div>
+		</section>
     </f:section>
+    
     
 </div>

@@ -1,6 +1,6 @@
 [adminUser = 1]
 
-options.pageTree.showPageIdWithTitle = 1
+options.pageTree.showPageIdWithTitle = 0
 
 [global]
 

@@ -8,7 +8,7 @@
 <title>KEO</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="js/modernizr-2.6.2.min.js"></script>
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/keolisStyles.css" rel="stylesheet">
 <!--[if IE 8]>
 <link href="css/ie8.css" rel="stylesheet">
 <![endif]-->
@@ -25,7 +25,8 @@
       <a class="navbar-brand" href="index.html"><img src="images/logo.jpg" class="img-responsive" alt="Keolis"></a> </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-left">
-        <li class="redColor dropdown pdd1"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Rejs med os</a>
+        <li class="groupColor dropdown pdd1"> 
+          <a href="inner01.html" class="dropdown-toggle disabled" data-toggle="dropdown">Rejs med os</a>
           <ul class="dropdown-menu navOneMenu" role="menu">
             <li class="first"><a href="#">Horaires</a></li>
             <li><a href="#">Itinéraires</a></li>
@@ -33,10 +34,26 @@
             <li><a href="#">Plans</a></li>
           </ul>
         </li>
-        <li class="blueColor pdd1"><a href="#">Om Keolis</a></li>
-        <li class="turquoiseColor pdd1"><a href="#">Kundeservice</a></li>
-        <li class="greenColor pdd1"><a href="career.html">Job &amp; Karriere</a></li>
-        <li class="yellowColor pdd1"><a href="#">Aktuelt</a></li>
+        <li class="passengersColor pdd1 dropdown"><a href="#" class="dropdown-toggle disabled" data-toggle="dropdown">Om Keolis</a>
+          <ul class="dropdown-menu navOneMenu" role="menu">
+            <li class="first"><a href="#">Sample</a></li>
+          </ul>
+        </li>
+        <li class="businessColor pdd1 dropdown"><a href="#" class="dropdown-toggle disabled" data-toggle="dropdown">Kundeservice</a>
+          <ul class="dropdown-menu navTwoMenu" role="menu">
+            <li class="first"><a href="#">Sample</a></li>
+          </ul>
+        </li>
+        <li class="careerColor pdd1 dropdown"><a href="career.html" class="dropdown-toggle disabled" data-toggle="dropdown">Job &amp; Karriere</a>
+          <ul class="dropdown-menu navTwoMenu" role="menu">
+            <li class="first"><a href="#">Sample</a></li>
+          </ul>        
+        </li>
+        <li class="newsColor pdd1 dropdown"><a href="#" class="dropdown-toggle disabled" data-toggle="dropdown">Aktuelt</a>
+          <ul class="dropdown-menu navOneMenu" role="menu">
+            <li class="first"><a href="#">Sample</a></li>
+          </ul>
+        </li>
         <li class="loginNavs"><a href="#">Log in</a></li>
         <li class="loginNavs"><a href="#">Log ud</a></li>
       </ul>
@@ -46,7 +63,8 @@
   </div>
 </div>
 <!--content area-->
-<section class="content">
+<div class="wrapp">
+<div class="cntWrapp clearfix"><section class="content">
   <div class="container fullminHeight"> 
     <!--main content area-->
     <div class="row loginFormCnt">
@@ -88,107 +106,110 @@
       </form>
     </div>
   </div>
-</section>
+</section></div>
 <!--footer area-->
-<footer class="hidden-xs">
-  <div class="siteMap">
+<footer>
+  <div class="siteMap hideMob">
     <div class="container">
       <div class="col-md-5 col-sm-5">
         <div class="mapUnit pull-left">
           <h3>Rejs med os</h3>
           <ul>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
           </ul>
         </div>
         <div class="mapUnit pull-left">
           <h3>Om keolis</h3>
           <ul>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
           </ul>
         </div>
         <div class="mapUnit pull-left">
           <h3>Kundeservice</h3>
           <ul>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
           </ul>
         </div>
         <div class="mapUnit pull-left">
           <h3>Job &amp; Karriere</h3>
           <ul>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
           </ul>
         </div>
         <div class="mapUnit pull-left">
           <h3>Aktuelt</h3>
           <ul>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
           </ul>
         </div>
       </div>
       <div class="col-md-2 col-sm-2">
         <div class="mapRightSegment">
           <ul>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
-  <div class="container visibleCnt">
-    <div class="col-md-2 col-sm-1">
-      <div class="footerLogo">
-        <p>Less savoir-faire</p>
-        <img src="images/footerLogo.png" alt="Keolis"> </div>
+  <div class="visibleCntWrapp">
+    <div class="container visibleCnt">
+      <div class="col-md-2 col-sm-1">
+        <div class="footerLogo">
+          <p class="hideMob">Less savoir-faire</p>
+          <img src="images/footerLogo.png" alt="Keolis"> </div>
+      </div>
+      <div class="col-md-3 col-sm-4 hideMob">
+        <div class="navUnit pull-left">
+          <ul>
+            <li><a href="javascript:void(0)">Adresser</a></li>
+            <li><a href="javascript:void(0)">Pressekontakt</a></li>
+          </ul>
+        </div>
+        <div class="navUnit pull-left">
+          <ul>
+            <li><a href="javascript:void(0)">Glemte sager</a></li>
+            <li><a href="javascript:void(0)">Cookiepolitik</a></li>
+          </ul>
+        </div>
+        <div class="navUnit pull-left">
+          <ul>
+            <li><a href="javascript:void(0)">Login</a></li>
+            <li><a href="javascript:void(0)">Miljøcertificering</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-2 hideMob">
+        <div class="pull-left socialIcons">
+          <ul>
+            <li><a href="javascript:void(0)" class="twitter"><span class="hidden">Twitter</span></a></li>
+            <li><a href="javascript:void(0)" class="facebook"><span class="hidden">Facebook</span></a></li>
+            <li><a href="javascript:void(0)" class="linkedIn"><span class="hidden">LinkedIn</span></a></li>
+          </ul>
+        </div>
+        <a href="javascript:void(0)" class="footerplan pull-right">Plan du site</a> </div>
     </div>
-    <div class="col-md-3 col-sm-4">
-      <div class="navUnit pull-left">
-        <ul>
-          <li><a href="#">Adresser</a></li>
-          <li><a href="#">Pressekontakt</a></li>
-        </ul>
-      </div>
-      <div class="navUnit pull-left">
-        <ul>
-          <li><a href="#">Glemte sager</a></li>
-          <li><a href="#">Cookiepolitik</a></li>
-        </ul>
-      </div>
-      <div class="navUnit pull-left">
-        <ul>
-          <li><a href="#">Login</a></li>
-          <li><a href="#">Miljøcertificering</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-md-2 col-sm-2">
-      <div class="pull-left socialIcons">
-        <ul>
-          <li><a href="#" class="twitter"><span class="hidden">Twitter</span></a></li>
-          <li><a href="#" class="facebook"><span class="hidden">Facebook</span></a></li>
-          <li><a href="#" class="linkedIn"><span class="hidden">LinkedIn</span></a></li>
-        </ul>
-      </div>
-      <a href="#" class="footerplan pull-right">Plan du site</a> </div>
   </div>
 </footer>
+</div>
 <!-- javascript --> 
 <script src="js/jquery.min.js"></script> 
 <script src="js/bootstrap.min.js"></script> 

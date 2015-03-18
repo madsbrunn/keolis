@@ -19,13 +19,16 @@
     <f:section name="BodyTagAttributes"></f:section>
     
     <f:section name="Content">
-        <div class="container fullminHeight"> 
-            <!--TYPO3SEARCH_begin-->
-            <v:content.render column="0"/>
-            <!--TYPO3SEARCH_end-->
-            <f:render partial="Searchbox" />
-            <f:render partial="Loginstatus" />        
-        </div>
+		<section class="content"> 
+			<div class="container fullminHeight"> 
+				<!--TYPO3SEARCH_begin-->
+				<v:content.render column="0"/>
+				<!--TYPO3SEARCH_end-->
+				<f:render partial="Searchbox" />
+				<f:render partial="Loginstatus" />        
+			</div>
+		</section>	 			
     </f:section>
+    
     
 </div>

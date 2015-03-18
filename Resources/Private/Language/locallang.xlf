@@ -20,6 +20,9 @@
             <trans-unit id="flux.career" xml:space="preserve">
                 <source>Career page</source>
             </trans-unit>
+            <trans-unit id="flux.intranet" xml:space="preserve">
+                <source>Intranet (not yet implemented)</source>
+            </trans-unit>
             <trans-unit id="flux.twocolumn.columns.left" xml:space="preserve">
                 <source>Left</source>
             </trans-unit>
@@ -35,7 +38,12 @@
             <trans-unit id="flux.threecolumn.columns.right" xml:space="preserve">
                 <source>Third</source>
             </trans-unit>
-            
+            <trans-unit id="label.users_pid" xml:space="preserve">
+                <source>ID of page where users are stored</source>
+            </trans-unit>            
+            <trans-unit id="label.csv_file" xml:space="preserve">
+                <source>Path to CSV-file</source>
+            </trans-unit>            
         </body>
     </file>
 </xliff>

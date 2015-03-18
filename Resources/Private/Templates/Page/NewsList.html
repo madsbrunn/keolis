@@ -25,72 +25,78 @@
     <f:section name="BodyTagAttributes"> class="inner"</f:section>
     
     <f:section name="Content">
-        <div class="container full"> 
-            
-            <div class="row">
+		<section class="content">
+			<div class="container full"> 
 
-                <div class="container row-table">
+				<div class="row">
 
-                    <div class="col-sm-4 tabletFullWidth row-table-cell infoSmall">
+					<div class="container row-table">
 
-                        <f:render partial="Pageinfo" />                    
+						<div class="col-sm-4 tabletFullWidth row-table-cell infoSmall">
 
-                        <div class="innerIntro">
-                            <!--TYPO3SEARCH_begin-->
-                            <v:content.render column="2"/>
-                            <!--TYPO3SEARCH_end-->
-                        </div>
+							<f:render partial="Pageinfo" />                    
 
-                    </div>
+							<div class="innerIntro">
+								<!--TYPO3SEARCH_begin-->
+								<v:content.render column="2"/>
+								<!--TYPO3SEARCH_end-->
+							</div>
 
-
-                    <div class="col-sm-3 row-table-cell visibleDesktop">
-
-                        <!-- large image -->
-                        <div>
-                            <f:if condition="{settings.largeimage}">
-                                <f:then>
-                                    <f:cObject typoscriptObjectPath="lib.responsiveImage" data="{file:'{settings.largeimage}',width:'416',height:'206c'}" currentValueKey="file" />
-                                </f:then>
-                                <f:else>
-                                    <f:image src="EXT:keolis/Resources/Public/images/innerImg4.jpg" class="img-responsive" alt="" />
-                                </f:else>
-                            </f:if>
-                        </div>
+						</div>
 
 
-                        <!-- small image -->
-                        <div class="innerSmallImg">
-                            <f:if condition="{settings.smallimage}">
-                                <f:then>
-                                    <f:cObject typoscriptObjectPath="lib.responsiveImage" data="{file:'{settings.smallimage}',width:'134c',height:'134c'}" currentValueKey="file" />
-                                </f:then>
-                                <f:else>
-                                    <f:image src="EXT:keolis/Resources/Public/images/innerImg5.jpg" class="img-responsive" alt="" />
-                                </f:else>
-                            </f:if>
-                        </div>
+						<div class="col-sm-3 row-table-cell visibleDesktop">
 
-                    </div>
-                </div>
+							<!-- large image -->
+							<div>
+								<f:if condition="{settings.largeimage}">
+									<f:then>
+										<f:cObject typoscriptObjectPath="lib.responsiveImage" data="{file:'{settings.largeimage}',width:'416',height:'206c'}" currentValueKey="file" />
+									</f:then>
+									<f:else>
+										<f:image src="EXT:keolis/Resources/Public/images/innerImg4.jpg" class="img-responsive" alt="" />
+									</f:else>
+								</f:if>
+							</div>
 
-                <div class="container">
-                    
-                    <div class="col-sm-5 tabletFullWidth">
-                        <!--TYPO3SEARCH_begin-->
-                        <v:content.render column="0"/>
-                        <!--TYPO3SEARCH_end-->
-                    </div>
-                    
-                    <div class="col-sm-2 visibleDesktop clearLR" style="margin-top:-170px;">
-                        <!--TYPO3SEARCH_begin-->
-                        <v:content.render column="1"/>
-                        <!--TYPO3SEARCH_end-->
-                    </div>
-                </div>
 
-            </div>
-        </div>
+							<!-- small image -->
+							<div class="innerSmallImg">
+								<f:if condition="{settings.smallimage}">
+									<f:then>
+										<f:cObject typoscriptObjectPath="lib.responsiveImage" data="{file:'{settings.smallimage}',width:'134c',height:'134c'}" currentValueKey="file" />
+									</f:then>
+									<f:else>
+										<f:image src="EXT:keolis/Resources/Public/images/innerImg5.jpg" class="img-responsive" alt="" />
+									</f:else>
+								</f:if>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="container">
+
+						<div class="col-sm-5 tabletFullWidth">
+							<!--TYPO3SEARCH_begin-->
+							<v:content.render column="0"/>
+							<!--TYPO3SEARCH_end-->
+						</div>
+
+						<div class="col-sm-2 visibleDesktop clearLR" style="margin-top:-170px;">
+							<!--TYPO3SEARCH_begin-->
+							<v:content.render column="1"/>
+							<!--TYPO3SEARCH_end-->
+						</div>
+					</div>
+
+				</div>
+				<!--search toggle-->
+				<f:render partial="Searchbox" />
+				<f:render partial="Loginstatus" /> 				
+			</div>
+		</section>				
     </f:section>
+
     
 </div>

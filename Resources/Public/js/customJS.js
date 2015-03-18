@@ -1,3 +1,32 @@
+$.fn.carouselHeights = function() {	
+    var items = $(this), //grab all slides
+        heights = [], //create empty array to store height values
+        tallest; //create variable to make note of the tallest slide
+
+    var normalizeHeights = function() {
+        items.each(function() { //add heights to array			
+            heights.push($(this).actual("height")); 
+        });
+        tallest = Math.max.apply(null, heights)+10; //cache largest value
+        items.each(function() {
+            $(this).css('min-height',tallest + 'px');
+        });
+    };
+
+    normalizeHeights();
+
+    $(window).on('resize orientationchange', function () {
+        //reset vars
+        tallest = 0;
+        heights.length = 0;
+
+        items.each(function() {
+            $(this).css('min-height','0'); //reset min-height
+        }); 
+        normalizeHeights(); //run it again 
+    });
+
+};
 homepage_docready = function () {	
 	fnCalculateTransparentLayers();
 	var homeSectionOpened = false;
@@ -5,13 +34,13 @@ homepage_docready = function () {
 	var homeSliderNextClicked = false;
 	function fnCalculateTransparentLayers(){
 		var clientBrowserWidth = $(window).width();
-		var containerWidth = $(".navbar-default .container").width();
+		var containerWidth = $("section.content").width();
 		var remainingWidth = clientBrowserWidth - containerWidth;
-		var eachColumnWidth = (remainingWidth/2)-10;
-		$("#outsideContainerLeft").width(eachColumnWidth);	
-		$("#outsideContainerRight").width(eachColumnWidth);
-		$("#outsideContainerLeft").height($("section .container").height());
-		$("#outsideContainerRight").height($("section .container").height());		
+		var eachColumnWidth = (remainingWidth/2);
+		$("#outsideContainerLeft").width(eachColumnWidth)+10;	
+		$("#outsideContainerRight").width(eachColumnWidth)+10;
+		$("#outsideContainerLeft").css('left', -$("#outsideContainerLeft").width()+1);
+		$("#outsideContainerRight").css('right', -$("#outsideContainerRight").width());
 	}	
 	function initColumns(){
 		window.location.reload();
@@ -90,20 +119,20 @@ homepage_docready = function () {
 				homeSliderPrevClicked = false;
 				homeSliderNextClicked = true;
 				if(window.innerWidth == 768){
-					$('#contentPart').animate({ left:'-=751px'},"slow");
-					$('#sideCol2').animate({ left:'-=751px'},"slow");
-					$('#sideCol4').animate({ left:'-=751px'},"slow");
+					$('#contentPart').animate({ left:'-=769px'},"slow");
+					$('#sideCol2').animate({ left:'-=769px'},"slow");
+					$('#sideCol4').animate({ left:'-=769px'},"slow");
 					if(isiPad){
-						$('#sideCol3').animate({ left:'-=771px'},"slow");
+						$('#sideCol3').animate({ left:'-=781px'},"slow");
 					}else{
-						$('#sideCol3').animate({ left:'-=751px'},"slow");
+						$('#sideCol3').animate({ left:'-=769px'},"slow");
 					}
 
 
 				}else{
 					$('#contentPart').animate({ left:'-=71.22448979591837%'},"slow");
-					$('#sideCol2').animate({ right:'+=71.22448979591837%'},"slow");
-					$('#sideCol3').animate({ right:'+=71.22448979591837%'},"slow");
+					$('#sideCol2').animate({ right:'+=71.7%'},"slow");
+					$('#sideCol3').animate({ right:'+=71.5%'},"slow");
 					$('#sideCol4').animate({ left:'-=71.22448979591837%'},"slow");
 				}
 			}
@@ -116,18 +145,18 @@ homepage_docready = function () {
 			homeSliderPrevClicked = true;
 			homeSliderNextClicked = false;
 			if(window.innerWidth == 768){
-					$('#contentPart').animate({ left:'+=751px'},"slow");
-					$('#sideCol2').animate({ left:'+=751px'},"slow");
-					$('#sideCol4').animate({ left:'+=751px'},"slow");
+					$('#contentPart').animate({ left:'+=769px'},"slow");
+					$('#sideCol2').animate({ left:'+=769px'},"slow");
+					$('#sideCol4').animate({ left:'+=769px'},"slow");
 					if(isiPad){
-						$('#sideCol3').animate({ left:'+=771px'},"slow");
+						$('#sideCol3').animate({ left:'+=781px'},"slow");
 					}else{
-						$('#sideCol3').animate({ left:'+=751px'},"slow");
+						$('#sideCol3').animate({ left:'+=769px'},"slow");
 					}
 			}else{
 				$('#contentPart').animate({ left:'+=71.22448979591837%'},"slow");
-				$('#sideCol2').animate({ right:'-=71.22448979591837%'},"slow");
-				$('#sideCol3').animate({ right:'-=71.22448979591837%'},"slow");
+				$('#sideCol2').animate({ right:'-=71.7%'},"slow");
+				$('#sideCol3').animate({ right:'-=71.5%'},"slow");
 				$('#sideCol4').animate({ left:'+=71.22448979591837%'},"slow");
 			}
 		} else {
@@ -241,12 +270,15 @@ default_docready = function () {
 		interval: 5000,
 		pause: "false"
 	});
-	$(".carousel").swiperight(function() {  
-            $(".carousel").carousel('prev');  
-        });  
-        $(".carousel").swipeleft(function() {  
-            $(".carousel").carousel('next');  
-        });
+	 $(".carousel").swiperight(function() {  
+      $(".carousel").carousel('prev');  
+    });  
+   $(".carousel").swipeleft(function() {  
+      $(".carousel").carousel('next');  
+   });
+    $(window).on('load', function(){	   
+        $('#intranetCarousel .item').carouselHeights();
+    });
 	 
 	//minus margin inner
 	/*var innerMinusMargin = $('.innerSmallImg').height();
@@ -262,4 +294,34 @@ default_docready = function () {
 		var innerSocialBigWidth = $('.innerSocialBig a').width();
 		$('.innerSocialBig a').height(innerSocialBigWidth);
 	});	
+	//intranet  -------------------------
+	//intranet carousel
+	var n = $(".carousel .item").length;
+	//alert(n);
+	if(n<2){
+		$(".carousel .tools").hide();
+	}	
+	
+	//career heights
+	  if(window.innerWidth > 768){
+			$('.career .cntWrapp').css('min-height', '100%');
+			$(".career .cntWrapp section.content, .career .cntWrapp section.content .container").css('height', ($(".career .cntWrapp").height()-69));
+		}else if(window.innerWidth == 768){
+			var tabletHeight = $(window).height();
+			$('.career .cntWrapp, .career .cntWrapp section.content, .career .cntWrapp section.content .container').css('height', (tabletHeight-134));
+		}
+		
+		$( window ).resize(function() {
+			if(window.innerWidth > 768){
+				$('.career .cntWrapp').css('min-height', '100%');
+				$(".career .cntWrapp section.content, .career .cntWrapp section.content .container").css('height', ($(".career .cntWrapp").height()-69));
+			}else if(window.innerWidth == 768){
+				var tabletHeight = $(window).height();
+				$('.career .cntWrapp, .career .cntWrapp section.content, .career .cntWrapp section.content .container').css('height', (tabletHeight-134));
+			}
+		});
+		
+		
 }
+
+

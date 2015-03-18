@@ -8,7 +8,7 @@
 <title>KEO</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="js/modernizr-2.6.2.min.js"></script>
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/keolisStyles.css" rel="stylesheet">
 <!--[if IE 8]>
 <link href="css/ie8.css" rel="stylesheet">
 <![endif]-->
@@ -25,8 +25,7 @@
       <a class="navbar-brand" href="index.html"><img src="images/logo.jpg" class="img-responsive" alt="Keolis"></a> </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-left">
-        <li class="redColor dropdown pdd1">
-          <a href="inner01.html" class="dropdown-toggle disabled" data-toggle="dropdown">Rejs med os</a>
+        <li class="groupColor dropdown pdd1"> <a href="inner01.html" class="dropdown-toggle disabled" data-toggle="dropdown">Rejs med os</a>
           <ul class="dropdown-menu navOneMenu" role="menu">
             <li class="first"><a href="#">Horaires</a></li>
             <li><a href="#">Itinéraires</a></li>
@@ -34,10 +33,26 @@
             <li><a href="#">Plans</a></li>
           </ul>
         </li>
-        <li class="blueColor pdd1"><a href="#">Om Keolis</a></li>
-        <li class="turquoiseColor pdd1"><a href="#">Kundeservice</a></li>
-        <li class="greenColor pdd1"><a href="career.html">Job &amp; Karriere</a></li>
-        <li class="yellowColor pdd1"><a href="#">Aktuelt</a></li>
+        <li class="passengersColor pdd1 dropdown"><a href="#" class="dropdown-toggle disabled" data-toggle="dropdown">Om Keolis</a>
+          <ul class="dropdown-menu navOneMenu" role="menu">
+            <li class="first"><a href="#">Sample</a></li>
+          </ul>
+        </li>
+        <li class="businessColor pdd1 dropdown"><a href="#" class="dropdown-toggle disabled" data-toggle="dropdown">Kundeservice</a>
+          <ul class="dropdown-menu navTwoMenu" role="menu">
+            <li class="first"><a href="#">Sample</a></li>
+          </ul>
+        </li>
+        <li class="careerColor pdd1 dropdown"><a href="career.html" class="dropdown-toggle disabled" data-toggle="dropdown">Job &amp; Karriere</a>
+          <ul class="dropdown-menu navTwoMenu" role="menu">
+            <li class="first"><a href="#">Sample</a></li>
+          </ul>
+        </li>
+        <li class="newsColor pdd1 dropdown"><a href="#" class="dropdown-toggle disabled" data-toggle="dropdown">Aktuelt</a>
+          <ul class="dropdown-menu navOneMenu" role="menu">
+            <li class="first"><a href="#">Sample</a></li>
+          </ul>
+        </li>
         <li class="loginNavs"><a href="#">Log in</a></li>
         <li class="loginNavs"><a href="#">Log ud</a></li>
       </ul>
@@ -47,316 +62,301 @@
   </div>
 </div>
 <!--content area-->
-<section class="content">
-  <div id="outsideContainerLeft"></div>
-  <div id="outsideContainerRight"></div>
-    <div class="container fullminHeight">
-      <div class="leftArr offMobile">  <a href="javascript:void(0)" id="prevBt" class="btn btn-default arrowBtn rightBottomBtn ashCol" ><span class="glyphicon glyphicon-chevron-left"></span></a></div>
-      <div class="rightArr offMobile"><a href="javascript:void(0)" class="btn btn-default arrowBtn rightBottomBtn ashCol" id="nextBt"><span class="glyphicon glyphicon-chevron-right"></span></a></div>
-
-     <!--main content area-->
-	  <div class="arrowMobContainer">
-			<div class="leftArr"><a href="javascript:void(0)" id="prevMBt" class="btn btn-default arrowBtn rightBottomBtn ashCol" ><span class="glyphicon glyphicon-chevron-left"></span></a></div>
-			  <div class="rightArr"><a href="javascript:void(0)" class="btn btn-default arrowBtn rightBottomBtn ashCol" id="nextMBt"><span class="glyphicon glyphicon-chevron-right"></span></a></div>
-		</div>
-    <div class="col-sm-5 full" id="contentPart">
-      <!--banner area-->
-      <div class="topPart" id="keoSlideColumn1">
-	    
-        <div class="bannerArea">
-          <div class="slider carrerBanner clearfix">
-            <!-- carousel -->
-            <div id="carousel-career" class="carousel slide" data-ride="carousel">
-              <!--<ol class="carousel-indicators">
-                <li data-target="javascript:void(0)carousel-career" data-slide-to="0" class="active"></li>
-                <li data-target="javascript:void(0)carousel-career" data-slide-to="1"></li>
-                <li data-target="javascript:void(0)carousel-career" data-slide-to="2"></li>
-              </ol>-->
-              <div class="carousel-inner">
-                <!--slides -->
-                <div class="item item1 active clearfix">
-                  <div class="bannerBox homeDarkBox box circle04">
-                    <h6>DECOUVERTE</h6>
-                      <span class="proximaLight">LE GROUPE</span>
-                      <h1>EN 3 MN</h1>
-                  </div>
-                  <div class="bannerBox decWid">
-                    <img src="images/play_icon.png" alt="" />
+<div class="wrapp">
+  <div class="cntWrapp clearfix">
+    <div id="outsideContainerLeft"></div>
+    <div id="outsideContainerRight"></div>
+    <section class="content">
+      <div class="container fullminHeight">
+        <div class="leftArr offMobile"> <a href="javascript:void(0)" id="prevBt" class="btn btn-default arrowBtn rightBottomBtn ashCol" ><span class="glyphicon glyphicon-chevron-left"></span></a></div>
+        <div class="rightArr offMobile"><a href="javascript:void(0)" class="btn btn-default arrowBtn rightBottomBtn ashCol" id="nextBt"><span class="glyphicon glyphicon-chevron-right"></span></a></div>
+        <!--main content area-->
+        <div class="col-sm-5 full" id="contentPart"> 
+          <!--banner area-->
+          <div class="topPart" id="keoSlideColumn1">
+            <div class="bannerArea">
+              <div class="slider carrerBanner clearfix"> 
+                <!-- carousel -->
+                <div id="carousel-career" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner"> 
+                    <!--slides -->
+                    <div class="item item1 active clearfix">
+                      <div class="bannerBox homeDarkBox box circle04">
+                        <h6>DECOUVERTE</h6>
+                        <span class="proximaLight">LE GROUPE</span>
+                        <h1>EN 3 MN</h1>
+                      </div>
+                      <div class="bannerBox decWid"> <img src="images/play_icon.png" alt="" /> </div>
+                    </div>
                   </div>
                 </div>
-
+              </div>
+            </div>
+          </div>
+          <div class="bottomPart">
+            <div class="newsArea clearfix">
+              <div class="newsItem">
+                <div class="careerBox orgBox mobilePadding">
+                  <h2 class="boxPading">Ledige <span class="proximaLight">stillinger</span></h2>
+                </div>
+              </div>
+              <div class="newsItem visibleDesktop">
+                <div class="newsImg newsImg1">&nbsp;</div>
+              </div>
+              <div class="newsItem">
+                <div>
+                  <h3><a href="javascript:void(0)">Lorem ipsum dolor sit amet </a></h3>
+                  <p>Adipisicing elit, sed do eiusmod tempor incidi dunt ut labore et dolore magna. </p>
+                </div>
+              </div>
+              <div class="newsItem visibleDesktop">
+                <div class="careerBox pinkBox mobilePadding"> <img src="images/eomag.png" alt="" />
+                  <p>Le webzine<br/>
+                    du groupe Keolis</p>
+                </div>
+              </div>
+              <div class="newsItem  last">
+                <div>
+                  <h3><a href="javascript:void(0)">Lorem ipsum dolor sit amet </a></h3>
+                  <p>Adipisicing elit, sed do eiusmod tempor incidi dunt ut labore et dolore magna. </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-
-      </div>
-      <div class="bottomPart">
-        <div class="newsArea clearfix">
-          <div class="newsItem">
-            <div class="careerBox orgBox mobilePadding">
-              <h2 class="boxPading">Ledige <span class="proximaLight">stillinger</span></h2>
-            </div>
-          </div>
-          <div class="newsItem visibleDesktop">
-            <div class="newsImg newsImg1">&nbsp;</div>
-          </div>
-          <div class="newsItem">
-            <div>
-              <h3><a href="javascript:void(0)">Lorem ipsum dolor sit amet </a></h3>
-              <p>Adipisicing elit, sed do eiusmod tempor incidi dunt ut labore et dolore magna. </p>
-            </div>
-          </div>
-          <div class="newsItem visibleDesktop">
-            <div class="careerBox pinkBox mobilePadding">
-                <img src="images/eomag.png" alt="" />
-              <p>Le webzine<br/>du groupe Keolis</p>
-            </div>
-          </div>
-          <div class="newsItem  last">
-            <div>
-              <h3><a href="javascript:void(0)">Lorem ipsum dolor sit amet </a></h3>
-              <p>Adipisicing elit, sed do eiusmod tempor incidi dunt ut labore et dolore magna. </p>
+        <div id="middleBluePart" class="fareBlueBox">
+          <div class="topPart">
+            <div class="careerBoxBlue fullBox mobilePadding boxBluePading clearfix circleLeft01">
+              <div class="closeBt"><a href="javascript:void(0)" class="btn btn-default arrowBtn" ><span class=" glyphicon glyphicon-remove"></span></a></div>
+              <div class="blueRightArr"><img src="images/blue_arrow.png" alt=""></div>
+              <p class="blueHead">FRANCE</p>
+              <p class="whiteDottedLine"></p>
+              <div class="numVal clearfix">
+                <div class="col-sm-2 blueBoxNumber text-left">74</div>
+                <div class="col-sm-5 blueBoxText bluePdd1">départements couverts </div>
+              </div>
+              <p class="blueDottedLine"></p>
+              <div class="numVal clearfix">
+                <div class="col-sm-2 blueBoxNumber text-left">90</div>
+                <div class="col-sm-5 blueBoxText bluePdd1">réseaux urbains </div>
+              </div>
+              <p class="blueDottedLine"></p>
+              <div class="numVal clearfix">
+                <div class="col-sm-2 blueBoxNumber text-right">9</div>
+                <div class="col-sm-5 blueBoxText bluePdd1">villes équipées<br>
+                  de tramway </div>
+              </div>
+              <p class="blueDottedLine"></p>
+              <div class="numVal clearfix">
+                <div class="col-sm-2 blueBoxNumber text-right">4</div>
+                <div class="col-sm-5 blueBoxText bluePdd1">villes équipées<br>
+                  de métro </div>
+              </div>
+              <p class="blueDottedLine"></p>
+              <div class="numVal clearfix">
+                <div class="col-sm-2 blueBoxNumber text-right">3</div>
+                <div class="col-sm-5 blueBoxText bluePdd1">villes équipées<br>
+                  de bus HNS</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-	<div id="middleBluePart" class="fareBlueBox">
-		<div class="topPart">
-			<div class="careerBoxBlue fullBox mobilePadding boxBluePading clearfix circleLeft01">
-				<div class="closeBt"><a href="javascript:void(0)" class="btn btn-default arrowBtn" ><span class=" glyphicon glyphicon-remove"></span></a></div>
-				<div class="blueRightArr"><img src="images/blue_arrow.png" alt=""></div>
-				<p class="blueHead">FRANCE</p>
-				<p class="whiteDottedLine"></p>
-				<div class="numVal clearfix">
-					<div class="col-sm-2 blueBoxNumber text-left">74</div>
-					<div class="col-sm-5 blueBoxText bluePdd1">départements couverts	</div>
-				</div>
-				<p class="blueDottedLine"></p>
-				<div class="numVal clearfix">
-					<div class="col-sm-2 blueBoxNumber text-left">90</div>
-					<div class="col-sm-5 blueBoxText bluePdd1">réseaux urbains	</div>
-				</div>
-				<p class="blueDottedLine"></p>
-				<div class="numVal clearfix">
-					<div class="col-sm-2 blueBoxNumber text-right">9</div>
-					<div class="col-sm-5 blueBoxText bluePdd1">villes équipées<br> de tramway	</div>
-				</div>
-				<p class="blueDottedLine"></p>
-				<div class="numVal clearfix">
-					<div class="col-sm-2 blueBoxNumber text-right">4</div>
-					<div class="col-sm-5 blueBoxText bluePdd1">villes équipées<br> de métro	</div>
-				</div>
-				<p class="blueDottedLine"></p>
-				<div class="numVal clearfix">
-					<div class="col-sm-2 blueBoxNumber text-right">3</div>
-					<div class="col-sm-5 blueBoxText bluePdd1">villes équipées<br> de bus HNS</div>
-				</div>
-			</div>
-		</div>
-	</div>
-    <!--right content-->
-
-    <aside class="col-sm-2 full" id="sideCol2">
-      <div class="topPart">
-        <div class="homeBox quarterBox mobilePadding boxPading clearfix colabSmallBox circle03">
-          <h2>VOYAGEURS</h2>
-          <p>TROUVEZ VOTRE RÉSEAU</p>
-          <a href="javascript:void(0)" class="btn btn-default arrowBtn rightBottomBtn"><span class="glyphicon glyphicon-chevron-right"></span></a>
-        </div>
-        <div class="halfAndQuarterBox whiteBox mobilePadding boxPading">
-          <h4 id="mapExplore" >EXPLOREZ NOS RÉSEAUX<br></h4>
-          <span>À TRAVERS LE MONDE</span>
-          <img src="images/map.png" alt="" id="mapClick" />
-        </div>		
-      </div>
-		<div class="bottomPart homeBox xtraPadd mobilePadding clearfix">
-			<p>EN 2013, VOUS AVEZ ÉTÉ</p>
-			<h1>105 millions</h1>
-			<span>À UTILISER NOS RÉSEAUX</span>
-		</div>
-      
-    </aside>
-
-    <div class="col-sep3 fullBox" id="sideCol3">
-		<div class="col-sm-3 full">
-			<!--banner area-->
-			<div class="fullHeight item5">
-				<div class="topPart lesCls">
-					<div class="item  active clearfix fullBox">
-						<div class="whiteCareerBox whiteBannerBox relCls box">
-							<h2><span class="proximaLight">prévoir les</span><br>
-							transports<br>
-							<span class="proximaLight">de demain</span></h2>
-							<a href="#" class="btn btn-defaultRed arrowRedBtn whiteBoxArrow absCls"><span class="glyphicon glyphicon-chevron-right"></span></a> 
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--right content-->
-    <aside class="col-sm-2 full sideCol4" id="sideCol4">
-      <div class="fullHeight">
-        <div class="careerBox thirtyFiveBox mobilePadding boxPading clearfix colabBox circle01">
-          <p class="number">5 000</p>
-          <p>Collaborateurs recrutés en 2012 à travers le monde</p>
-          <p class="number">300</p>
-          <p>Offres à travers le monde pour tous les talents</p>
-          <a href="javascript:void(0)" class="btn btn-default arrowBtn rightBottomBtn"><span class="glyphicon glyphicon-chevron-right"></span></a> 
-		</div>
-
-		<div id="secPage" class="quarterBox mobilePadding boxPading minHeightBox">
-			<div class="newsArea clearfix">
-			  <div class="newsItem">
-				<div class="mobilePadding">
-				  <p><b>14.02.2014</b><br>Keolis choisie par Strasbouurg pour le m&eacute;tro</p>
-				</div>
-			  </div>
-			  <div class="newsItem ">
-				<div class="newsImg mallImg right">&nbsp;</div>
-			  </div>
-			</div>
-		</div>
+        <!--right content-->
         
-		<div id="secPageCon" class="thirtyFiveBox newsArea clearfix">
-			<div class="newsItems">
-				<div class="newsImg full mobilePadding boxPading clearfix manBg relCls">
-					<div class="manBlueBox">Jean-Pierre <br>Farandou<br><b>PRÉSDENT</b><br><img src="images/sml_play.png" alt="" /></div>
-				</div>
-			</div>
-		</div>
+        <aside class="col-sm-2 full" id="sideCol2">
+          <div class="topPart">
+            <div class="homeBox quarterBox mobilePadding boxPading clearfix colabSmallBox circle03">
+              <h2>VOYAGEURS</h2>
+              <p>TROUVEZ VOTRE RÉSEAU</p>
+              <a href="javascript:void(0)" class="btn btn-default arrowBtn rightBottomBtn"><span class="glyphicon glyphicon-chevron-right"></span></a> </div>
+            <div class="halfAndQuarterBox whiteBox mobilePadding boxPading">
+              <h4 id="mapExplore" >EXPLOREZ NOS RÉSEAUX<br>
+              </h4>
+              <span>À TRAVERS LE MONDE</span> <img src="images/map.png" alt="" id="mapClick" /> </div>
+          </div>
+          <div class="bottomPart homeBox xtraPadd mobilePadding clearfix">
+            <p>EN 2013, VOUS AVEZ ÉTÉ</p>
+            <h1>105 millions</h1>
+            <span>À UTILISER NOS RÉSEAUX</span> </div>
+        </aside>
+        <div class="col-sep3 fullBox" id="sideCol3">
+          <div class="col-sm-3 full"> 
+            <!--banner area-->
+            <div class="fullHeight item5">
+              <div class="topPart lesCls">
+                <div class="item  active clearfix fullBox">
+                  <div class="whiteCareerBox whiteBannerBox relCls box">
+                    <h2><span class="proximaLight">prévoir les</span><br>
+                      transports<br>
+                      <span class="proximaLight">de demain</span></h2>
+                    <a href="#" class="btn btn-defaultRed arrowRedBtn whiteBoxArrow absCls"><span class="glyphicon glyphicon-chevron-right"></span></a> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--right content-->
+        <aside class="col-sm-2 full sideCol4" id="sideCol4">
+          <div class="fullHeight">
+            <div class="careerBox thirtyFiveBox mobilePadding boxPading clearfix colabBox circle01">
+              <p class="number">5 000</p>
+              <p>Collaborateurs recrutés en 2012 à travers le monde</p>
+              <p class="number">300</p>
+              <p>Offres à travers le monde pour tous les talents</p>
+              <a href="javascript:void(0)" class="btn btn-default arrowBtn rightBottomBtn"><span class="glyphicon glyphicon-chevron-right"></span></a> </div>
+            <div id="secPage" class="quarterBox mobilePadding boxPading minHeightBox">
+              <div class="newsArea clearfix">
+                <div class="newsItem">
+                  <div class="mobilePadding">
+                    <p><b>14.02.2014</b><br>
+                      Keolis choisie par Strasbouurg pour le m&eacute;tro</p>
+                  </div>
+                </div>
+                <div class="newsItem ">
+                  <div class="newsImg mallImg right">&nbsp;</div>
+                </div>
+              </div>
+            </div>
+            <div id="secPageCon" class="thirtyFiveBox newsArea clearfix">
+              <div class="newsItems">
+                <div class="newsImg full mobilePadding boxPading clearfix manBg relCls">
+                  <div class="manBlueBox">Jean-Pierre <br>
+                    Farandou<br>
+                    <b>PRÉSDENT</b><br>
+                    <img src="images/sml_play.png" alt="" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <!--search toggle-->
+        <div class="headerDropp searchDropp hidden-xs">
+          <form method="post" action="#">
+            <div class="clearfix">
+              <input type="text" class="search-control pull-left" placeholder="Entrez un mot clef, le nom d’une station, un arrêt, un service...">
+              <input type="button"  class="btn btn-rechercher col-md-1  pull-right" value="Rechercher">
+            </div>
+          </form>
+        </div>
+        <div class="headerDropp loginDropp hidden-xs">
+          <form method="post" action="#">
+            <div class="clearfix">
+              <p>Du er logget ind som Joakim Nørholm Vasehus (1002)</p>
+              <input type="button"  class="btn btn-rechercher col-md-1  pull-right" value="Log ud">
+            </div>
+          </form>
+        </div>
       </div>
-    </aside>
-    <!--search toggle-->
-    <div class="headerDropp searchDropp hidden-xs">
-      <form method="post" action="#">
-        <div class="clearfix">
-          <input type="text" class="search-control pull-left" placeholder="Entrez un mot clef, le nom d’une station, un arrêt, un service...">
-          <input type="button"  class="btn btn-rechercher col-md-1  pull-right" value="Rechercher">
-        </div>
-      </form>
-    </div>
-    
-    <div class="headerDropp loginDropp hidden-xs">
-      <form method="post" action="#">
-        <div class="clearfix">
-          <p>Du er logget ind som Joakim Nørholm Vasehus (1002)</p>
-          <input type="button"  class="btn btn-rechercher col-md-1  pull-right" value="Log ud">
-        </div>
-      </form>
-    </div>
-
+    </section>
   </div>
-
-</section>
-<!--footer area-->
-<footer class="hidden-xs">
-  <div class="siteMap">
-    <div class="container">
-      <div class="col-md-5 col-sm-5">
-        <div class="mapUnit pull-left">
-          <h3>Rejs med os</h3>
-          <ul>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-          </ul>
+  <!--footer area-->
+  <footer>
+    <div class="siteMap hideMob">
+      <div class="container">
+        <div class="col-md-5 col-sm-5">
+          <div class="mapUnit pull-left">
+            <h3>Rejs med os</h3>
+            <ul>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            </ul>
+          </div>
+          <div class="mapUnit pull-left">
+            <h3>Om keolis</h3>
+            <ul>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            </ul>
+          </div>
+          <div class="mapUnit pull-left">
+            <h3>Kundeservice</h3>
+            <ul>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            </ul>
+          </div>
+          <div class="mapUnit pull-left">
+            <h3>Job &amp; Karriere</h3>
+            <ul>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            </ul>
+          </div>
+          <div class="mapUnit pull-left">
+            <h3>Aktuelt</h3>
+            <ul>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="mapUnit pull-left">
-          <h3>Om keolis</h3>
-          <ul>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-          </ul>
+        <div class="col-md-2 col-sm-2">
+          <div class="mapRightSegment">
+            <ul>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+              <li><a href="javascript:void(0)">Lorem ipsum</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="mapUnit pull-left">
-          <h3>Kundeservice</h3>
-          <ul>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-          </ul>
-        </div>
-        <div class="mapUnit pull-left">
-          <h3>Job &amp; Karriere</h3>
-          <ul>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-          </ul>
-        </div>
-        <div class="mapUnit pull-left">
-          <h3>Aktuelt</h3>
-          <ul>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-2 col-sm-2">
-        <div class="mapRightSegment">
-          <ul>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-            <li><a href="javascript:void(0)">Lorem ipsum</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container visibleCnt">
-    <div class="col-md-2 col-sm-1">
-      <div class="footerLogo">
-        <p>Less savoir-faire</p>
-        <img src="images/footerLogo.png" alt="Keolis"> </div>
-    </div>
-    <div class="col-md-3 col-sm-4">
-      <div class="navUnit pull-left">
-        <ul>
-          <li><a href="javascript:void(0)">Adresser</a></li>
-          <li><a href="javascript:void(0)">Pressekontakt</a></li>
-        </ul>
-      </div>
-      <div class="navUnit pull-left">
-        <ul>
-          <li><a href="javascript:void(0)">Glemte sager</a></li>
-          <li><a href="javascript:void(0)">Cookiepolitik</a></li>
-        </ul>
-      </div>
-      <div class="navUnit pull-left">
-        <ul>
-          <li><a href="javascript:void(0)">Login</a></li>
-          <li><a href="javascript:void(0)">Miljøcertificering</a></li>
-        </ul>
       </div>
     </div>
-    <div class="col-md-2 col-sm-2">
-      <div class="pull-left socialIcons">
-        <ul>
-          <li><a href="javascript:void(0)" class="twitter"><span class="hidden">Twitter</span></a></li>
-          <li><a href="javascript:void(0)" class="facebook"><span class="hidden">Facebook</span></a></li>
-          <li><a href="javascript:void(0)" class="linkedIn"><span class="hidden">LinkedIn</span></a></li>
-        </ul>
+    <div class="visibleCntWrapp">
+      <div class="container visibleCnt">
+        <div class="col-md-2 col-sm-1">
+          <div class="footerLogo">
+            <p class="hideMob">Less savoir-faire</p>
+            <img src="images/footerLogo.png" alt="Keolis"> </div>
+        </div>
+        <div class="col-md-3 col-sm-4 hideMob">
+          <div class="navUnit pull-left">
+            <ul>
+              <li><a href="javascript:void(0)">Adresser</a></li>
+              <li><a href="javascript:void(0)">Pressekontakt</a></li>
+            </ul>
+          </div>
+          <div class="navUnit pull-left">
+            <ul>
+              <li><a href="javascript:void(0)">Glemte sager</a></li>
+              <li><a href="javascript:void(0)">Cookiepolitik</a></li>
+            </ul>
+          </div>
+          <div class="navUnit pull-left">
+            <ul>
+              <li><a href="javascript:void(0)">Login</a></li>
+              <li><a href="javascript:void(0)">Miljøcertificering</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-2 hideMob">
+          <div class="pull-left socialIcons">
+            <ul>
+              <li><a href="javascript:void(0)" class="twitter"><span class="hidden">Twitter</span></a></li>
+              <li><a href="javascript:void(0)" class="facebook"><span class="hidden">Facebook</span></a></li>
+              <li><a href="javascript:void(0)" class="linkedIn"><span class="hidden">LinkedIn</span></a></li>
+            </ul>
+          </div>
+          <a href="javascript:void(0)" class="footerplan pull-right">Plan du site</a> </div>
       </div>
-      <a href="javascript:void(0)" class="footerplan pull-right">Plan du site</a> </div>
-  </div>
-</footer>
-<!-- javascript -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/customJS.js"></script>
+    </div>
+  </footer>
+</div>
+<!-- javascript --> 
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/plugins.js"></script> 
+<script src="js/customJS.js"></script> 
 <script type="text/javascript">$(function () {default_docready();homepage_docready();});</script>
 </body>
 </html>

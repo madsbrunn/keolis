@@ -3,8 +3,10 @@ plugin.tx_vhs{
         asset {
             styles {
                 name = styles
-                path = EXT:keolis/Resources/Public/css/bootstrap.min.css
+                #path = EXT:keolis/Resources/Public/css/bootstrap.min.css
+                path = EXT:keolis/Resources/Public/css/keolisStyles.css
             }
+			
 
             additional{
                 name = additional
@@ -47,6 +49,18 @@ plugin.tx_vhs{
                 name = custom
                 dependencies = jquery
                 path = EXT:keolis/Resources/Public/js/customJS.js
+            }
+
+            additionaljs {
+                name = additionaljs
+                dependencies = jquery
+                path = EXT:keolis/Resources/Public/additional.js
+            }
+
+            cookiesdirective{
+                name = cookiesdirective
+                dependencies = jquery
+                path = EXT:keolis/Resources/Public/js/jquery.cookiesdirective.js
             }
         }
     }
