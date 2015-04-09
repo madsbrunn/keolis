@@ -45,9 +45,15 @@ plugin.tx_vhs{
                 path = EXT:keolis/Resources/Public/js/plugins.js
             }
 
+			actual {
+				name = actual
+				dependencies = jquery
+				path = EXT:keolis/Resources/Public/js/jquery.actual.min.js
+			}
+
             custom {
                 name = custom
-                dependencies = jquery
+                dependencies = jquery,actual
                 path = EXT:keolis/Resources/Public/js/customJS.js
             }
 

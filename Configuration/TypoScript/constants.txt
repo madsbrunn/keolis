@@ -3,6 +3,8 @@
 # customsubcategory=pages=Special pages
 # customsubcategory=seo=SEO
 # customsubcategory=news=News
+# customsubcategory=mainnavigation=Main navigation
+
 
 plugin.tx_keolis{
     # cat = keolis/urls ; type=string; label=URL to LinkedIn
@@ -25,4 +27,25 @@ plugin.tx_keolis{
     news_detail_pid = 821
     # cat = keolis/news ; type=int+; label=News storage pid:Page where news detail are displayed
     news_storage_pid = 188
+
+	main_navigation {
+
+		# cat = keolis/mainnavigation ; type=options[Dark blue=groupColor,Turquois=passengersColor,Red=businessColor,Green=careerColor,Yellow=newsColor]; label=First menu item color: Background color used for the first menu item 
+		item1.class = groupColor
+
+		# cat = keolis/mainnavigation ; type=options[Dark blue=groupColor,Turquois=passengersColor,Red=businessColor,Green=careerColor,Yellow=newsColor]; label=Second menu item color: Background color used for the second menu item 
+		item2.class = passengersColor
+
+		# cat = keolis/mainnavigation ; type=options[Dark blue=groupColor,Turquois=passengersColor,Red=businessColor,Green=careerColor,Yellow=newsColor]; label=Third menu item color: Background color used for the third menu item 
+		item3.class = businessColor
+
+		# cat = keolis/mainnavigation ; type=options[Dark blue=groupColor,Turquois=passengersColor,Red=businessColor,Green=careerColor,Yellow=newsColor]; label=Fourth menu item color: Background color used for the fourth menu item 
+		item4.class = careerColor
+
+		# cat = keolis/mainnavigation ; type=options[Dark blue=groupColor,Turquois=passengersColor,Red=businessColor,Green=careerColor,Yellow=newsColor]; label=Fifth menu item color: Background color used for the fifth menu item 
+		item5.class = newsColor
+
+	}
 }
+
+styles.content.imgtext.rowSpace = 0

@@ -1,0 +1,28 @@
+<div class="innerIntro">
+	<!-- Wrapper for slides -->
+	<div class="carousel-inner" role="listbox" id="intranetCarousel">
+		
+		<f:for each="{news}" as="newsItem" iteration="iterator">
+		
+			<div class="item{f:if(condition:'{iterator.isFirst}',then:' active',else:'')}">
+			
+				<h2><span class="proximaLight">{newsItem.title}</span></h2>
+
+				<f:format.html parseFuncTSPath="lib.parseFunc_RTE">{newsItem.bodytext}</f:format.html>			
+			
+			</div>
+			
+		</f:for>
+		
+	</div>
+</div>
+<div class="tools"> 
+	<!-- Indicators -->
+	<ol class="carousel-indicators">
+		<f:for each="{news}" as="newsItem" iteration="iterator">
+			<li data-target="#carousel-example-generic" data-slide-to="{iterator.index}" class="{f:if(condition:'{iterator.isFirst}',then:'active',else:'')}"></li>
+		</f:for>
+	</ol>
+	<!-- Controls --> 
+	<a href="#carousel-example-generic" class="btn btn-default arrowBtn rightBottomBtn right" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span></a> <a href="#carousel-example-generic" class="btn btn-default arrowBtn rightBottomBtn left" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a> 
+</div>

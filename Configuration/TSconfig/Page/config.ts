@@ -28,6 +28,11 @@ TCEFORM.tt_content.layout.disabled = 1
 TCEFORM.tt_content.sectionIndex.disabled = 1
 TCEFORM.tt_content.linkToTop.disabled = 1
 
+TCEFORM.tt_content.header_layout {
+	
+	addItems.99 = Layout 2 (alt.)
+}
+
 
 [treeLevel = 1]
 
@@ -68,6 +73,10 @@ TCEFORM.pages.tx_realurl_nocache.disabled = 1
 
 tx_news.templateLayouts {
     50 = Seneste nyt
+	51 = Slider
+	52 = Liste med billeder
+	53 = Liste uden billeder
+	54 = Kort liste
 }
 
 

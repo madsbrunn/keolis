@@ -21,7 +21,7 @@
                 <source>Career page</source>
             </trans-unit>
             <trans-unit id="flux.intranet" xml:space="preserve">
-                <source>Intranet (not yet implemented)</source>
+                <source>Intranet (alpha)</source>
             </trans-unit>
             <trans-unit id="flux.twocolumn.columns.left" xml:space="preserve">
                 <source>Left</source>

@@ -5,19 +5,36 @@
 -->
 <f:if condition="{news}">
     <f:then>
-        <f:if condition="{settings.templateLayout} == 50">
-            
-            <f:then>
+		<f:switch expression="{settings.templateLayout}">
+			
+			<f:case value="50">
                 <div class="latestNews">
                     <h2>SENESTE NYHEDER</h2>
                     <f:for each="{news}" as="newsItem" iteration="iterator">
                         <f:render partial="List/LatestItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+						<n:excludeDisplayedNews newsItem="{newsItem}" />						
                     </f:for>
                 </div>
-            </f:then>
-            
-            <f:else>
-        
+			</f:case>
+			
+			<f:case value="51">
+				<f:render partial="List/Slider" arguments="{_all}" />
+			</f:case>
+			
+			<f:case value="52">
+				<f:render partial="List/WithImage" arguments="{_all}" />
+			</f:case>
+			
+			<f:case value="53">
+				<f:render partial="List/WithNoImage" arguments="{_all}" />
+			</f:case>
+			
+			<f:case value="54">
+				<f:render partial="List/Short" arguments="{_all}" />
+			</f:case>
+			
+			
+			<f:case default="TRUE">
                 <f:if condition="{settings.hidePagination}">
                         <f:then>
                                 <f:for each="{news}" as="newsItem" iteration="iterator">
@@ -32,8 +49,8 @@
                                 </n:widget.paginate>
                         </f:else>
                 </f:if>
-            </f:else>
-        </f:if>
+			</f:case>
+		</f:switch>
     </f:then>
     <f:else>
             <div class="no-news-found">

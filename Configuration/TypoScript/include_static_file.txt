@@ -1,4 +1,4 @@
 EXT:css_styled_content/static,
 EXT:news/Configuration/TypoScript,
 EXT:form/Configuration/TypoScript,
-EXT:seo_basics/static
+EXT:seo_basics/Configuration/TypoScript

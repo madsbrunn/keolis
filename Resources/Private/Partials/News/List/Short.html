@@ -1,0 +1,15 @@
+{namespace n=Tx_News_ViewHelpers}
+
+<f:for each="{news}" as="newsItem" iteration="iterator">
+
+	<p class="hed"><n:link newsItem="{newsItem}" settings="{settings}">{newsItem.title} »</n:link></p>
+	<p>
+		<n:format.date format="{f:translate(key:'altDateFormat')}">{newsItem.datetime}</n:format.date>
+		
+		<f:if condition="{newsItem.firstCategory}">
+			• {newsItem.firstCategory.title}
+		</f:if>
+	</p>	
+	
+	<n:excludeDisplayedNews newsItem="{newsItem}" />
+</f:for>

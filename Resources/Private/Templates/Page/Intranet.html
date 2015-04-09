@@ -9,11 +9,21 @@
         <flux:form id="intranet">
             <flux:grid>
                 <flux:grid.row>
-                    <flux:grid.column colPos="2" name="Slider" colspan="2"/>
-                    <flux:grid.column colPos="1" name="Sidebar" colspan="1" rowspan="2"/>                    
+                    <flux:grid.column colPos="2" name="Slider" colspan="2" rowspan="2"/>
+                    <flux:grid.column colPos="3" name="Image 1" colspan="2" rowspan="1" variables="{allowedContentTypes:'image'}"/>
                 </flux:grid.row>
                 <flux:grid.row>
-                    <flux:grid.column colPos="0" name="Content" colspan="2"/>
+                    <flux:grid.column colPos="7" name="Image 2" colspan="1" variables="{allowedContentTypes:'image'}"/>
+                    <flux:grid.column colPos="1" name="Sidebar" colspan="1" rowspan="2"/>
+                </flux:grid.row>
+                <flux:grid.row>
+                    <flux:grid.column colPos="0" name="Local news" colspan="2"/>
+                    <flux:grid.column colPos="8" name="General news" colspan="1"/>
+                </flux:grid.row>
+                <flux:grid.row>
+                    <flux:grid.column colPos="4" name="Box 1" colspan="1" />
+                    <flux:grid.column colPos="5" name="Box 2" colspan="1" />
+                    <flux:grid.column colPos="6" name="Box 3" colspan="2" />
                 </flux:grid.row>
             </flux:grid>
         </flux:form>
@@ -29,64 +39,19 @@
 					<div class="container">
 						<div class="row-table">
 							<div id="carousel-example-generic" class="col-sm-4  row-table-cell infoSmallintranet carousel slide" data-ride="carousel">
-								<div class="innerIntro"> 
-									<!-- Wrapper for slides -->
-									<div class="carousel-inner" role="listbox" id="intranetCarousel">
-										<div class="item active">
-											<h2>
-												<span class="proximaLight">Aktuel driftsinformation</span><br>
-												Depotpladser i Holstebro
-											</h2>
-											<p>LDa DSB har modtaget klager fra nogle af deres kunder over, at vores busser  holder forkert og kører meget tæt på andre parkerede biler på depotpladsen,  vi låner af dem i Holstebro. Skal det indskærpes at busserne kun må holde på  de afmærkede pladser på vedhæftede pdf.</p>
-											<p class="filler">10. jan. 2015  •  Filer: <a href="#">Depot_Holstebro.pdf</a>, 392 K </p>
-										</div>
-										<div class="item">
-											<h2>
-												<span class="proximaLight">Lorem ipsum</span><br>
-												Lorem ipsum
-											</h2>
-											<p><strong>Longer slide</strong></p>
-											<p>Lorem ipsum</p>
-											<p>Lorem ipsum</p>
-											<p>Lorem ipsum</p>
-											<p>Lorem ipsum</p>
-											<p>Lorem ipsum</p>
-											<p>Lorem ipsum</p>
-											<p>Lorem ipsum</p>
-											<p>Lorem ipsum</p>
-											<p>Lorem ipsum</p>
-										</div>
-										<div class="item">
-											<h2>
-												<span class="proximaLight">Lorem ipsum</span><br>
-												Lorem ipsum
-											</h2>
-											<p>Slide 3</p>
-										</div>
-									</div>
-								</div>
-								<div class="tools"> 
-									<!-- Indicators -->
-									<ol class="carousel-indicators">
-										<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-										<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-										<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-									</ol>
-									<!-- Controls --> 
-									<a href="#carousel-example-generic" class="btn btn-default arrowBtn rightBottomBtn right" role="button" data-slide="prev"> 
-										<span class="glyphicon glyphicon-chevron-left"></span>
-									</a> 
-									<a href="#carousel-example-generic" class="btn btn-default arrowBtn rightBottomBtn left" role="button" data-slide="next"> 
-										<span class="glyphicon glyphicon-chevron-right"></span> 
-									</a> 
-								</div>
+								
+								<v:content.render column="2"/>
+								
 							</div>
+							
 							<div class="col-sm-3  row-table-cell innerRightCntr">
 								<div class="visibleDesktop image1">
-									<img src="images/intranetArticle.jpg" class="img-responsive" alt="">
+									<v:content.render column="3" loadRegister="{fixedHeight:'161c',fixedWidth:'507c'}" limit="1"/>
+										
 								</div>
 								<div class="innerSmallImg visibleDesktop image2">
-									<img src="images/innerImg7.jpg" class="img-responsive" alt="">
+									<v:content.render column="7" limit="1" />
+
 								</div>
 							</div>
 						</div>
@@ -95,42 +60,10 @@
 						<div class="intranetNews clearfix">
 							<div class="col-sm-5 clearfix">
 								<div class="clearfix localeNews">
-									<h2>
-										<span class="proximaLight">nyt – lokale</span>
-									</h2>
-									<div class="newsItem clearfix">
-										<h2>Quisque maximus vehicula</h2>
-										<p class="data">9. feb. 2015 • <a href="#">2 kommentarer</a> • <a href="#">Lokale</a></p>
-										<div class="newsCntr"> <img src="images/innerImg6.jpg" alt="">
-												<p>Duis efficitur finibus leo, in vestibulum justo ultrices vitae. Sed non felis at purus porttitor tempor vitae eget nunc. Vestibulum neque urna, eleifend nec aliquet sit amet, mollis. <a href="#">Læs mere &rsaquo;&rsaquo;</a></p>
-										</div>
-									</div>
-									<div class="newsItem clearfix">
-										<h2>Quisque maximus </h2>
-										<p class="data">9. feb. 2015 • <a href="#">2 kommentarer</a> • <a href="#">Lokale</a></p>
-										<div class="newsCntr"> <img src="images/innerImg6.jpg" alt="">
-												<p>Duis efficitur finibus leo, in vestibulum justo ultrices vitae. Sed non felis at purus porttitor tempor vitae eget nunc. Vestibulum neque urna, eleifend nec aliquet sit amet, mollis rutrum. <a href="#">Læs mere &rsaquo;&rsaquo;</a></p>
-										</div>
-									</div>
+									<v:content.render column="0"/>
 								</div>
 								<div class="clearfix generalNews">
-									<h2><span class="proximaLight">nyt – keolis</span></h2>
-									<div class="newsItem clearfix">
-										<h2>Quisque maximus  vehicula</h2>
-										<p class="data">9. feb. 2015 • <a href="#">2 kommentarer</a> • <a href="#">Keolis</a></p>
-										<div class="col-sm-7">
-											<p>Duis efficitur finibus leo, in vestibulum  justo ultrices vitae. Sed non felis at  purus porttitor tempor vitae eget  nunc. Vestibulum neque urna, eleifend. <br>
-													<a href="#">Læs mere &rsaquo;&rsaquo;</a></p>
-										</div>
-									</div>
-									<div class="newsItem clearfix">
-										<h2>Quisque maximus  vehicula</h2>
-										<p class="data">9. feb. 2015 • <a href="#">2 kommentarer</a> • <a href="#">Keolis</a></p>
-										<div class="col-sm-7">
-											<p>Duis efficitur finibus leo, in vestibulum  justo ultrices vitae. Sed non felis at  purus porttitor tempor vitae eget  nunc. Vestibulum neque urna, eleifend. <br>
-													<a href="#">Læs mere &rsaquo;&rsaquo;</a></p>
-										</div>
-									</div>
+									<v:content.render column="8"/>
 								</div>
 							</div>
 							<div class="col-sm-2 visibleDesktop clearLR"></div>
@@ -138,64 +71,18 @@
 					</div>
 					<div class="greenListCntr">
 						<div class="greenList">
-							<h2>Rundt i keolis </h2>
-							<p class="hed"><a href="#">Høj kvalitet - kontrakt forlænget »</a></p>
-							<p>10. jan 2014 • <a href="#">Helsinge</a></p>
-							<p class="hed"><a href="#">Julefesten nærmer sig »</a></p>
-							<p>10. jan 2014 • <a href="#">Aalborg</a></p>
-							<p class="hed"><a href="#">Karins Klumme uge 46 »</a></p>
-							<p>10. jan 2014 • <a href="#">Stamholmen</a></p>
-							<p class="hed"><a href="#">Invitation »</a></p>
-							<p>10. jan 2014 • <a href="#">Skibby</a></p>
-							<p class="hed"><a href="#">Vagtliste »</a></p>
-							<p>10. jan 2014 • <a href="#">Skibby</a></p>
-							<h2 class="lineHeding">Seneste kommentar</h2>
-							<ul class="bulletsLists">
-								<li><a href="#">Jens Jenssen om Quisque maximus vehicula  » </a></li>
-								<li><a href="#">Jens Jenssen om Lorem iopsum delmonte  »</a></li>
-								<li><a href="#">Jens Jenssen om Quisque maximus del mote vesuvio vehicula  »</a></li>
-							</ul>
+							<v:content.render column="1"/>
 						</div>
 					</div>
 					<div class="container localBoxes clearfix">
 						<div class="boxItem">
-							<h2>Sidst opdaterede sider</h2>
-							<ul class="bulletsLists">
-								<li><a href="#">Information om busselskabet <br>
-											Nettbuss. Rutekørsel og buskørsel <br>
-												08-01-2015</a></li>
-												<li><a href="#">Crew Web <br>
-															18-11-2014</a></li>
-												<li><a href="#">Min hverdag <br>
-															11-07-2014</a></li>
-												</ul>
-												</div>
+							<v:content.render column="4"/>
+						</div>
 						<div class="boxItem">
-							<h2>genveje</h2>
-							<ul>
-								<li><span>Chaufførhåndbog</span> <br>
-										<a href="#">Find svar i chaufførhåndbogen »</a></li>
-								<li><span>Crew Web</span> <br>
-										<a href="#">Arbejdsplan, fridage, timeregnskab mv. »</a></li>
-								<li><span>Viazonen</span> <br>
-										<a href="#">Besøg Viazonen »</a></li>
-							</ul>
+							<v:content.render column="5"/>
 						</div>
 						<div class="boxItem lastBox">
-							<h2>Afregning - Rejsekort</h2>
-							<p>Næste mulighed for afregning er: </p>
-							<ul class="bulletsLists">
-								<li><a href="#">Aalborg (v/garagen): Hver onsdag fra kl. 08.30-14.30</a></li>
-								<li><a href="#">Aars: Torsdag d 12.02.15. kl 08.30-13.00</a></li>
-								<li><a href="#">Løgstør: </a></li>
-								<li><a href="#">Frederikshavn:</a></li>
-								<li><a href="#">Østervrå:</a></li>
-								<li><a href="#">Hjørring: </a></li>
-								<li><a href="#">Hadsund:</a></li>
-							</ul>
-							<a href="#" class="btn btn-default arrowBtn rightBottomBtn">
-								<span class="glyphicon glyphicon-chevron-right"></span>
-							</a> 
+							<v:content.render column="6"/>
 						</div>
 					</div>
 				</div>

@@ -10,11 +10,14 @@ plugin.tx_news {
                     maxWidth = 168
                     maxHeight = 169
                 }
+				dummyImage = EXT:keolis/Resources/Public/images/keolis_newsicon.png
             }
         }
 
         detail{
             showSocialShareButtons = 0
+
+			displayDummyIfNoMedia = 0
 
             media{
                 image{

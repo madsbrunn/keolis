@@ -11,24 +11,24 @@ lib.menu{
 
         NO = 1
         NO{
-			wrapItemAndSub  = <li class="groupColor pdd1">|</li> || <li class="passengersColor pdd1">|</li> |*| <li class="businessColor pdd1">|</li> |*| <li class="careerColor pdd1">|</li> || <li class="newsColor pdd1">|</li> 
+			wrapItemAndSub  = <li class="{$plugin.tx_keolis.main_navigation.item1.class} pdd1">|</li> || <li class="{$plugin.tx_keolis.main_navigation.item2.class} pdd1">|</li> |*| <li class="{$plugin.tx_keolis.main_navigation.item3.class} pdd1">|</li> |*| <li class="{$plugin.tx_keolis.main_navigation.item4.class} pdd1">|</li> || <li class="{$plugin.tx_keolis.main_navigation.item5.class} pdd1">|</li> 
         }
 
         ACT = 1
         ACT{
-			wrapItemAndSub  = <li class="groupColor pdd1 active">|</li> || <li class="passengersColor pdd1 active">|</li> |*| <li class="businessColor pdd1 active">|</li> |*| <li class="careerColor pdd1 active">|</li> || <li class="newsColor pdd1 active">|</li> 
+			wrapItemAndSub  = <li class="{$plugin.tx_keolis.main_navigation.item2.class} pdd1 active">|</li> || <li class="{$plugin.tx_keolis.main_navigation.item2.class} pdd1 active">|</li> |*| <li class="{$plugin.tx_keolis.main_navigation.item3.class} pdd1 active">|</li> |*| <li class="{$plugin.tx_keolis.main_navigation.item4.class} pdd1 active">|</li> || <li class="{$plugin.tx_keolis.main_navigation.item5.class} pdd1 active">|</li> 
 
         }
 
         IFSUB = 1
         IFSUB{
-			wrapItemAndSub  = <li class="groupColor dropdown pdd1">|</li> || <li class="passengersColor dropdown pdd1">|</li> |*| <li class="businessColor dropdown pdd1">|</li> |*| <li class="careerColor dropdown pdd1">|</li> || <li class="newsColor dropdown pdd1">|</li> 
+			wrapItemAndSub  = <li class="{$plugin.tx_keolis.main_navigation.item1.class} dropdown pdd1">|</li> || <li class="{$plugin.tx_keolis.main_navigation.item2.class} dropdown pdd1">|</li> |*| <li class="{$plugin.tx_keolis.main_navigation.item3.class} dropdown pdd1">|</li> |*| <li class="{$plugin.tx_keolis.main_navigation.item4.class} dropdown pdd1">|</li> || <li class="{$plugin.tx_keolis.main_navigation.item5.class} dropdown pdd1">|</li> 
             ATagParams = class="dropdown-toggle disabled" data-toggle="dropdown"
         }
 
         ACTIFSUB = 1
         ACTIFSUB{
-			wrapItemAndSub  = <li class="groupColor dropdown pdd1 active">|</li> || <li class="passengersColor dropdown pdd1 active">|</li> |*| <li class="businessColor dropdown pdd1 active">|</li> |*| <li class="careerColor dropdown pdd1 active">|</li> || <li class="newsColor dropdown pdd1 active">|</li> 
+			wrapItemAndSub  = <li class="{$plugin.tx_keolis.main_navigation.item1.class} dropdown pdd1 active">|</li> || <li class="{$plugin.tx_keolis.main_navigation.item2.class} dropdown pdd1 active">|</li> |*| <li class="{$plugin.tx_keolis.main_navigation.item3.class} dropdown pdd1 active">|</li> |*| <li class="{$plugin.tx_keolis.main_navigation.item4.class} dropdown pdd1 active">|</li> || <li class="{$plugin.tx_keolis.main_navigation.item5.class} dropdown pdd1 active">|</li> 
             ATagParams = class="dropdown-toggle disabled" data-toggle="dropdown"
         }
 

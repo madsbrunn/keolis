@@ -1,0 +1,35 @@
+{namespace n=Tx_News_ViewHelpers}
+
+<f:for each="{news}" as="newsItem" iteration="iterator">
+	
+	<div class="newsItem clearfix">
+		<h2>{newsItem.title}</h2>
+		
+		<p class="data">
+			<n:format.date format="{f:translate(key:'altDateFormat')}">{newsItem.datetime}</n:format.date>
+			
+			<f:if condition="{newsItem.firstCategory}">
+				• {newsItem.firstCategory.title}
+			</f:if>
+			
+		</p>
+	
+		<div class="col-sm-7">
+			<p>
+				<f:if condition="{newsItem.teaser}">
+					<f:then>
+						<f:format.crop maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="1">{newsItem.teaser}</f:format.crop>
+					</f:then>
+					<f:else>
+						<f:format.crop maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="1">{newsItem.bodytext}</f:format.crop>
+					</f:else>
+				</f:if>
+				<n:link newsItem="{newsItem}" settings="{settings}">
+					<f:translate key="more-link" /> &rsaquo;&rsaquo;
+				</n:link>
+			</p>
+		</div>	
+		
+	</div>
+	<n:excludeDisplayedNews newsItem="{newsItem}" />	
+</f:for>
